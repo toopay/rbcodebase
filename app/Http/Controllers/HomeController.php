@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
+use App\Mail\Test;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +15,7 @@ class HomeController extends Controller
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+		//$this->middleware('auth');
 	}
 
 	/**
@@ -23,6 +25,10 @@ class HomeController extends Controller
 	 */
 	public function index()
 	{
+
+		// Mail::to('rob@bertholf.com')->send(new Test());
+		//Mail::to('rob@bertholf.com')->queue(new Test);
+
 		return view('home');
 	}
 }
