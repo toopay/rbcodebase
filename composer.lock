@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c66e9d54dbaffbd9936821c05b654ea7",
-    "content-hash": "c2e29be08e0881b16ff7c04ec9784da6",
+    "hash": "f3e01ad9a3972a5c23cb8c55cfd5d2ff",
+    "content-hash": "b0ceeb84f0706fb56c318877048db1d5",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -882,6 +882,54 @@
                 "psr-3"
             ],
             "time": "2016-07-29 03:23:52"
+        },
+        {
+            "name": "mpociot/teamwork",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpociot/teamwork.git",
+                "reference": "b7730a049b12ab4d65cc9b663dc3f0883d542045"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpociot/teamwork/zipball/b7730a049b12ab4d65cc9b663dc3f0883d542045",
+                "reference": "b7730a049b12ab4d65cc9b663dc3f0883d542045",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.3",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "illuminate/database": "~5.0",
+                "mockery/mockery": "dev-master",
+                "orchestra/testbench": "3.3.*@dev",
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mpociot\\Teamwork": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "m.pociot@gmail.com"
+                }
+            ],
+            "description": "User to Team associations for the Laravel 5 Framework",
+            "homepage": "http://github.com/mpociot/teamwork",
+            "keywords": [
+                "Invite",
+                "Teams"
+            ],
+            "time": "2016-08-29 08:11:42"
         },
         {
             "name": "mtdowling/cron-expression",
