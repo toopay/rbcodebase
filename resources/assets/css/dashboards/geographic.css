@@ -1,0 +1,6 @@
+@media (max-width: 543px) {
+  .top-charts .col-xs-12,
+  .top-charts .col-sm-6 {
+    margin-bottom: 20px;
+  }
+}

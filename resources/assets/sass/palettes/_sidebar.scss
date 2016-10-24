@@ -1,0 +1,59 @@
+@function generate-sidebar-palette($background-color, $color, $hover-background-color, $hover-color) {
+	@return (
+		'background-color': $background-color,
+		'color': $color,
+		'hover-color': $hover-color,
+		'hover-background-color': $hover-background-color
+	)
+}
+
+$sidebar-palettes: (
+	'white': generate-sidebar-palette(
+		'white',
+		'grey-900',
+		'blue-900',
+		'white'
+	),
+	'dark-grey': generate-sidebar-palette(
+		'grey-900',
+		'white',
+		'grey-900',
+		'white'
+	),
+	'primary': generate-sidebar-palette(
+		'blue-900',
+		'white',
+		'blue-900',
+		'white'
+	),
+	'secondary': generate-sidebar-palette(
+		'pink-a700',
+		'white',
+		'pink-a700',
+		'white'
+	),
+	'success': generate-sidebar-palette(
+		'green-700',
+		'white',
+		'green-700',
+		'white'
+	),
+	'info': generate-sidebar-palette(
+		'light-blue-a700',
+		'white',
+		'light-blue-a700',
+		'white'
+	),
+	'warning': generate-sidebar-palette(
+		'amber-a700',
+		'white',
+		'amber-a700',
+		'white'
+	),
+	'danger': generate-sidebar-palette(
+		'red-700',
+		'white',
+		'red-700',
+		'white'
+	)
+);

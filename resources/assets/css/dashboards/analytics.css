@@ -1,0 +1,27 @@
+#dashboards-analytics .counters .charts {
+  padding: 40px;
+}
+
+@media (max-width: 543px) {
+  #dashboards-analytics .counters .charts {
+    padding: 0px;
+  }
+  #dashboards-analytics .counters .col-xs-12 {
+    margin-bottom: 20px;
+  }
+  #dashboards-analytics .nv-legend {
+    display: none;
+  }
+  #dashboards-analytics .widget {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 544px) and (max-width: 767px) {
+  #dashboards-analytics .counters .charts {
+    padding: 0px;
+  }
+  #dashboards-analytics .counters .col-xs-12 {
+    margin-bottom: 20px;
+  }
+}

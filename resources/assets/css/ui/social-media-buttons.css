@@ -1,0 +1,916 @@
+.btn.btn-facebook {
+  background: #365397;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-facebook:hover {
+  background: #2f4984 !important;
+  color: #fff;
+}
+
+.btn.btn-facebook.bmd-btn-fab {
+  background: #365397;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-facebook.bmd-btn-fab:hover {
+  background: #2f4984 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-facebook {
+  background: none;
+  color: #365397;
+  border: none;
+}
+
+.btn.btn-flat-facebook:hover {
+  background: #eeeeee !important;
+  color: #2f4984 !important;
+}
+
+.btn.btn-outline-facebook {
+  background: none;
+  color: #365397;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #365397;
+}
+
+.btn.btn-outline-facebook:hover {
+  color: #293e71 !important;
+  border-color: #293e71 !important;
+}
+
+.btn.btn-twitter {
+  background: #00a9f1;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-twitter:hover {
+  background: #0097d8 !important;
+  color: #fff;
+}
+
+.btn.btn-twitter.bmd-btn-fab {
+  background: #00a9f1;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-twitter.bmd-btn-fab:hover {
+  background: #0097d8 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-twitter {
+  background: none;
+  color: #00a9f1;
+  border: none;
+}
+
+.btn.btn-flat-twitter:hover {
+  background: #eeeeee !important;
+  color: #0097d8 !important;
+}
+
+.btn.btn-outline-twitter {
+  background: none;
+  color: #00a9f1;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00a9f1;
+}
+
+.btn.btn-outline-twitter:hover {
+  color: #0085be !important;
+  border-color: #0085be !important;
+}
+
+.btn.btn-linkedin {
+  background: #006db3;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-linkedin:hover {
+  background: #005d9a !important;
+  color: #fff;
+}
+
+.btn.btn-linkedin.bmd-btn-fab {
+  background: #006db3;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-linkedin.bmd-btn-fab:hover {
+  background: #005d9a !important;
+  color: #fff;
+}
+
+.btn.btn-flat-linkedin {
+  background: none;
+  color: #006db3;
+  border: none;
+}
+
+.btn.btn-flat-linkedin:hover {
+  background: #eeeeee !important;
+  color: #005d9a !important;
+}
+
+.btn.btn-outline-linkedin {
+  background: none;
+  color: #006db3;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #006db3;
+}
+
+.btn.btn-outline-linkedin:hover {
+  color: #004e80 !important;
+  border-color: #004e80 !important;
+}
+
+.btn.btn-apple {
+  background: #737373;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-apple:hover {
+  background: #666666 !important;
+  color: #fff;
+}
+
+.btn.btn-apple.bmd-btn-fab {
+  background: #737373;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-apple.bmd-btn-fab:hover {
+  background: #666666 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-apple {
+  background: none;
+  color: #737373;
+  border: none;
+}
+
+.btn.btn-flat-apple:hover {
+  background: #eeeeee !important;
+  color: #666666 !important;
+}
+
+.btn.btn-outline-apple {
+  background: none;
+  color: #737373;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #737373;
+}
+
+.btn.btn-outline-apple:hover {
+  color: #5a5a5a !important;
+  border-color: #5a5a5a !important;
+}
+
+.btn.btn-google {
+  background: #4285f4;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-google:hover {
+  background: #2a75f3 !important;
+  color: #fff;
+}
+
+.btn.btn-google.bmd-btn-fab {
+  background: #4285f4;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-google.bmd-btn-fab:hover {
+  background: #2a75f3 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-google {
+  background: none;
+  color: #4285f4;
+  border: none;
+}
+
+.btn.btn-flat-google:hover {
+  background: #eeeeee !important;
+  color: #2a75f3 !important;
+}
+
+.btn.btn-outline-google {
+  background: none;
+  color: #4285f4;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4285f4;
+}
+
+.btn.btn-outline-google:hover {
+  color: #1266f1 !important;
+  border-color: #1266f1 !important;
+}
+
+.btn.btn-google-plus {
+  background: #e0452c;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-google-plus:hover {
+  background: #d3381f !important;
+  color: #fff;
+}
+
+.btn.btn-google-plus.bmd-btn-fab {
+  background: #e0452c;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-google-plus.bmd-btn-fab:hover {
+  background: #d3381f !important;
+  color: #fff;
+}
+
+.btn.btn-flat-google-plus {
+  background: none;
+  color: #e0452c;
+  border: none;
+}
+
+.btn.btn-flat-google-plus:hover {
+  background: #eeeeee !important;
+  color: #d3381f !important;
+}
+
+.btn.btn-outline-google-plus {
+  background: none;
+  color: #e0452c;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0452c;
+}
+
+.btn.btn-outline-google-plus:hover {
+  color: #bd321c !important;
+  border-color: #bd321c !important;
+}
+
+.btn.btn-youtube {
+  background: #ff3333;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-youtube:hover {
+  background: #ff1a1a !important;
+  color: #fff;
+}
+
+.btn.btn-youtube.bmd-btn-fab {
+  background: #ff3333;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-youtube.bmd-btn-fab:hover {
+  background: #ff1a1a !important;
+  color: #fff;
+}
+
+.btn.btn-flat-youtube {
+  background: none;
+  color: #ff3333;
+  border: none;
+}
+
+.btn.btn-flat-youtube:hover {
+  background: #eeeeee !important;
+  color: #ff1a1a !important;
+}
+
+.btn.btn-outline-youtube {
+  background: none;
+  color: #ff3333;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ff3333;
+}
+
+.btn.btn-outline-youtube:hover {
+  color: red !important;
+  border-color: red !important;
+}
+
+.btn.btn-vimeo {
+  background: #48b6ed;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-vimeo:hover {
+  background: #31adeb !important;
+  color: #fff;
+}
+
+.btn.btn-vimeo.bmd-btn-fab {
+  background: #48b6ed;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-vimeo.bmd-btn-fab:hover {
+  background: #31adeb !important;
+  color: #fff;
+}
+
+.btn.btn-flat-vimeo {
+  background: none;
+  color: #48b6ed;
+  border: none;
+}
+
+.btn.btn-flat-vimeo:hover {
+  background: #eeeeee !important;
+  color: #31adeb !important;
+}
+
+.btn.btn-outline-vimeo {
+  background: none;
+  color: #48b6ed;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #48b6ed;
+}
+
+.btn.btn-outline-vimeo:hover {
+  color: #1aa3e8 !important;
+  border-color: #1aa3e8 !important;
+}
+
+.btn.btn-pinterest {
+  background: #ce1a19;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-pinterest:hover {
+  background: #b71716 !important;
+  color: #fff;
+}
+
+.btn.btn-pinterest.bmd-btn-fab {
+  background: #ce1a19;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-pinterest.bmd-btn-fab:hover {
+  background: #b71716 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-pinterest {
+  background: none;
+  color: #ce1a19;
+  border: none;
+}
+
+.btn.btn-flat-pinterest:hover {
+  background: #eeeeee !important;
+  color: #b71716 !important;
+}
+
+.btn.btn-outline-pinterest {
+  background: none;
+  color: #ce1a19;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ce1a19;
+}
+
+.btn.btn-outline-pinterest:hover {
+  color: #a11413 !important;
+  border-color: #a11413 !important;
+}
+
+.btn.btn-yelp {
+  background: #c30f00;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-yelp:hover {
+  background: #aa0d00 !important;
+  color: #fff;
+}
+
+.btn.btn-yelp.bmd-btn-fab {
+  background: #c30f00;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-yelp.bmd-btn-fab:hover {
+  background: #aa0d00 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-yelp {
+  background: none;
+  color: #c30f00;
+  border: none;
+}
+
+.btn.btn-flat-yelp:hover {
+  background: #eeeeee !important;
+  color: #aa0d00 !important;
+}
+
+.btn.btn-outline-yelp {
+  background: none;
+  color: #c30f00;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c30f00;
+}
+
+.btn.btn-outline-yelp:hover {
+  color: #900b00 !important;
+  border-color: #900b00 !important;
+}
+
+.btn.btn-dribbble {
+  background: #ed4584;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-dribbble:hover {
+  background: #eb2e75 !important;
+  color: #fff;
+}
+
+.btn.btn-dribbble.bmd-btn-fab {
+  background: #ed4584;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-dribbble.bmd-btn-fab:hover {
+  background: #eb2e75 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-dribbble {
+  background: none;
+  color: #ed4584;
+  border: none;
+}
+
+.btn.btn-flat-dribbble:hover {
+  background: #eeeeee !important;
+  color: #eb2e75 !important;
+}
+
+.btn.btn-outline-dribbble {
+  background: none;
+  color: #ed4584;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ed4584;
+}
+
+.btn.btn-outline-dribbble:hover {
+  color: #e91765 !important;
+  border-color: #e91765 !important;
+}
+
+.btn.btn-amazon {
+  background: #ff9700;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-amazon:hover {
+  background: #e68800 !important;
+  color: #fff;
+}
+
+.btn.btn-amazon.bmd-btn-fab {
+  background: #ff9700;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-amazon.bmd-btn-fab:hover {
+  background: #e68800 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-amazon {
+  background: none;
+  color: #ff9700;
+  border: none;
+}
+
+.btn.btn-flat-amazon:hover {
+  background: #eeeeee !important;
+  color: #e68800 !important;
+}
+
+.btn.btn-outline-amazon {
+  background: none;
+  color: #ff9700;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ff9700;
+}
+
+.btn.btn-outline-amazon:hover {
+  color: #cc7900 !important;
+  border-color: #cc7900 !important;
+}
+
+.btn.btn-skype {
+  background: #00acf4;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-skype:hover {
+  background: #009adb !important;
+  color: #fff;
+}
+
+.btn.btn-skype.bmd-btn-fab {
+  background: #00acf4;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-skype.bmd-btn-fab:hover {
+  background: #009adb !important;
+  color: #fff;
+}
+
+.btn.btn-flat-skype {
+  background: none;
+  color: #00acf4;
+  border: none;
+}
+
+.btn.btn-flat-skype:hover {
+  background: #eeeeee !important;
+  color: #009adb !important;
+}
+
+.btn.btn-outline-skype {
+  background: none;
+  color: #00acf4;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00acf4;
+}
+
+.btn.btn-outline-skype:hover {
+  color: #0088c1 !important;
+  border-color: #0088c1 !important;
+}
+
+.btn.btn-instagram {
+  background: #396d9a;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-instagram:hover {
+  background: #326087 !important;
+  color: #fff;
+}
+
+.btn.btn-instagram.bmd-btn-fab {
+  background: #396d9a;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-instagram.bmd-btn-fab:hover {
+  background: #326087 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-instagram {
+  background: none;
+  color: #396d9a;
+  border: none;
+}
+
+.btn.btn-flat-instagram:hover {
+  background: #eeeeee !important;
+  color: #326087 !important;
+}
+
+.btn.btn-outline-instagram {
+  background: none;
+  color: #396d9a;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #396d9a;
+}
+
+.btn.btn-outline-instagram:hover {
+  color: #2b5375 !important;
+  border-color: #2b5375 !important;
+}
+
+.btn.btn-dropbox {
+  background: #0d84de;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-dropbox:hover {
+  background: #0c76c6 !important;
+  color: #fff;
+}
+
+.btn.btn-dropbox.bmd-btn-fab {
+  background: #0d84de;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-dropbox.bmd-btn-fab:hover {
+  background: #0c76c6 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-dropbox {
+  background: none;
+  color: #0d84de;
+  border: none;
+}
+
+.btn.btn-flat-dropbox:hover {
+  background: #eeeeee !important;
+  color: #0c76c6 !important;
+}
+
+.btn.btn-outline-dropbox {
+  background: none;
+  color: #0d84de;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #0d84de;
+}
+
+.btn.btn-outline-dropbox:hover {
+  color: #0a67ae !important;
+  border-color: #0a67ae !important;
+}
+
+.btn.btn-flickr {
+  background: #ea0066;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-flickr:hover {
+  background: #d1005b !important;
+  color: #fff;
+}
+
+.btn.btn-flickr.bmd-btn-fab {
+  background: #ea0066;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-flickr.bmd-btn-fab:hover {
+  background: #d1005b !important;
+  color: #fff;
+}
+
+.btn.btn-flat-flickr {
+  background: none;
+  color: #ea0066;
+  border: none;
+}
+
+.btn.btn-flat-flickr:hover {
+  background: #eeeeee !important;
+  color: #d1005b !important;
+}
+
+.btn.btn-outline-flickr {
+  background: none;
+  color: #ea0066;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ea0066;
+}
+
+.btn.btn-outline-flickr:hover {
+  color: #b70050 !important;
+  border-color: #b70050 !important;
+}
+
+.btn.btn-github {
+  background: #2f2f2f;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-github:hover {
+  background: #222222 !important;
+  color: #fff;
+}
+
+.btn.btn-github.bmd-btn-fab {
+  background: #2f2f2f;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-github.bmd-btn-fab:hover {
+  background: #222222 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-github {
+  background: none;
+  color: #2f2f2f;
+  border: none;
+}
+
+.btn.btn-flat-github:hover {
+  background: #eeeeee !important;
+  color: #222222 !important;
+}
+
+.btn.btn-outline-github {
+  background: none;
+  color: #2f2f2f;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #2f2f2f;
+}
+
+.btn.btn-outline-github:hover {
+  color: #161616 !important;
+  border-color: #161616 !important;
+}
+
+.btn.btn-tumblr {
+  background: #304c68;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-tumblr:hover {
+  background: #283f57 !important;
+  color: #fff;
+}
+
+.btn.btn-tumblr.bmd-btn-fab {
+  background: #304c68;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-tumblr.bmd-btn-fab:hover {
+  background: #283f57 !important;
+  color: #fff;
+}
+
+.btn.btn-flat-tumblr {
+  background: none;
+  color: #304c68;
+  border: none;
+}
+
+.btn.btn-flat-tumblr:hover {
+  background: #eeeeee !important;
+  color: #283f57 !important;
+}
+
+.btn.btn-outline-tumblr {
+  background: none;
+  color: #304c68;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #304c68;
+}
+
+.btn.btn-outline-tumblr:hover {
+  color: #203345 !important;
+  border-color: #203345 !important;
+}
+
+.btn.btn-foursquare {
+  background: #207dc5;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-foursquare:hover {
+  background: #1c6faf !important;
+  color: #fff;
+}
+
+.btn.btn-foursquare.bmd-btn-fab {
+  background: #207dc5;
+  color: #fff;
+  border: none;
+}
+
+.btn.btn-foursquare.bmd-btn-fab:hover {
+  background: #1c6faf !important;
+  color: #fff;
+}
+
+.btn.btn-flat-foursquare {
+  background: none;
+  color: #207dc5;
+  border: none;
+}
+
+.btn.btn-flat-foursquare:hover {
+  background: #eeeeee !important;
+  color: #1c6faf !important;
+}
+
+.btn.btn-outline-foursquare {
+  background: none;
+  color: #207dc5;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #207dc5;
+}
+
+.btn.btn-outline-foursquare:hover {
+  color: #196199 !important;
+  border-color: #196199 !important;
+}
+
+.btn.btn-outline-default {
+  background: none;
+  color: #000;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn.btn-rounded {
+  border-radius: 15px;
+}
+
+.btn.btn-icon i {
+  margin-right: 5px;
+}
+
+.btn.bmd-btn-fab i {
+  text-align: center;
+}
+
+.btn.bmd-btn-fab.bmd-btn-fab-sm i {
+  transform: scale(0.75);
+}
+
+.btn.btn-stacked-icon {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  min-height: 60px;
+  font-size: 0.75rem;
+  height: 60px;
+}
+
+.btn.btn-stacked-icon i, .btn.btn-stacked-icon .btn-text {
+  margin: auto;
+}

@@ -1,0 +1,20 @@
+[data-layout="empty-view-2"] {
+  position: relative;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+}
+
+[data-layout="empty-view-2"] ::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+}
+
+[data-layout="empty-view-2"] .main {
+  transform-style: preserve-3d;
+  background: none;
+}
+
+html [data-layout="empty-view-2"] {
+  background: url(../../assets/images/322.jpg) no-repeat center center fixed;
+  background-size: cover;
+}

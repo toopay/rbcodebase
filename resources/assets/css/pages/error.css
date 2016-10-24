@@ -1,0 +1,41 @@
+.error-2 {
+  max-width: 500px;
+  padding: 20px;
+  color: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.error-2 h1 {
+  font-size: 128px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.error-2 h3 {
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  font-size: 40px;
+}
+
+.error-2 h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error-2 h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.error-2 .btn {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}

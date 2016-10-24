@@ -1,0 +1,50 @@
+@function generate-navbar-palette($background-color, $color, $hover-color) {
+	@return (
+		'background-color': $background-color,
+		'color': $color,
+		'hover-color': $hover-color
+	)
+}
+
+$navbar-palettes: (
+	'dark-grey': generate-navbar-palette(
+		'grey-900',
+		'white',
+		'blue-a700'
+	),
+	'primary': generate-navbar-palette(
+		'blue-900',
+		'white',
+		'amber-a700'
+	),
+	'secondary': generate-navbar-palette(
+		'pink-a700',
+		'white',
+		'amber-a700'
+	),
+	'success': generate-navbar-palette(
+		'green-700',
+		'white',
+		'amber-a700'
+	),
+	'info': generate-navbar-palette(
+		'light-blue-a700',
+		'white',
+		'amber-a700'
+	),
+	'warning': generate-navbar-palette(
+		'amber-700',
+		'white',
+		'blue-900'
+	),
+	'danger': generate-navbar-palette(
+		'red-700',
+		'white',
+		'amber-a700'
+	),
+	'white': generate-navbar-palette(
+		'white',
+		'grey-900',
+		'yellow-a700'
+	)
+);

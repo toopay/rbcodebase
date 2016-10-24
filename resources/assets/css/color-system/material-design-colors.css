@@ -1,0 +1,32 @@
+.material-design-colors {
+  width: 100%;
+  min-height: 600px;
+}
+
+.material-design-colors .color-example {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  height: 40px;
+}
+
+.material-design-colors .color-example span {
+  font-size: 0.8rem !important;
+}
+
+.material-design-colors .border-color-example p {
+  display: block;
+  border-width: 3px;
+  border-style: solid;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
