@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Actor\User\Auth;
 
-use App\User;
-use Validator;
+use App\Models\Actor\User\User;
 use App\Http\Controllers\Controller;
+
+use App\Events\Actor\User\UserRegistered;
+use App\Repositories\Actor\User\UserRepositoryContract;
+
+use Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -27,15 +32,22 @@ class RegisterController extends Controller
 	 *
 	 * @var string
 	 */
-	protected $redirectTo = '/home';
+	protected $redirectTo = route('app.index');
+
+	/**
+	 * @var UserRepositoryContract
+	 */
+	private $userRepository;
 
 	/**
 	 * Create a new controller instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(UserRepositoryContract $userRepository)
 	{
+		$this->userRepository = $userRepository;
+
 		$this->middleware('guest');
 	}
 
@@ -48,9 +60,11 @@ class RegisterController extends Controller
 	protected function validator(array $data)
 	{
 		return Validator::make($data, [
-			'name' => 'required|max:255',
-			'email' => 'required|email|max:255|unique:users',
-			'password' => 'required|min:6|confirmed',
+			'name_first' => 'required|max:255',
+			'name_last'  => 'required|max:255',
+			'name_slug'  => 'required|max:255|unique:users',
+			'email'      => 'required|email|max:255|unique:users',
+			'password'   => 'required|min:6|confirmed',
 		]);
 	}
 
@@ -62,10 +76,20 @@ class RegisterController extends Controller
 	 */
 	protected function create(array $data)
 	{
-		return User::create([
-			'name' => $data['name'],
-			'email' => $data['email'],
-			'password' => bcrypt($data['password']),
-		]);
+		$user = $this->userRepository->create($data);
+
+		if (isset($data['types'])) {
+			$user->updateTypes($data['types']);
+		}
+
+		event(new UserRegistered($user));
+
+		if (config('access.users.confirm_email')) {
+			return redirect()->route('app.index')->withFlashSuccess(trans('exceptions.app.auth.confirmation.created_confirm'));
+		}
+
+		auth()->login($user);
+
+		return redirect($this->redirectPath());
 	}
 }

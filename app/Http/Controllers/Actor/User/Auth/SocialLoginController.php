@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Actor\User\Auth;
 
 use Auth;
-use App\User;
+use App\Models\Actor\User\User;
 use Socialite;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -32,7 +32,9 @@ class SocialLoginController extends Controller
 		// If no user exists, create user
 		if (!$user) {
 			$user = User::create([
-				'name' => $serviceUser->getName(),
+				'name_first' => $serviceUser->getName(), // @TODO: REFACTOR JUST FIRST NAME
+				'name_last' => $serviceUser->getName(), // @TODO: REFACTOR JUST LAST NAME
+				'name_slug' => (!empty($serviceUser->getNickname()) ? $serviceUser->getNickname() : str_slug($serviceUser->getName())),
 				'email' => $serviceUser->getEmail(),
 			]);
 		}
