@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Actor\User;
 
 use App\UserSocial;
 use Illuminate\Support\ServiceProvider;

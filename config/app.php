@@ -12,7 +12,7 @@ return [
 	| any other location as required by the application or its packages.
 	*/
 
-	'name' => 'Laravel',
+	'name' => 'RBCodebase',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -168,6 +168,7 @@ return [
 		 */
 
 		Laravel\Socialite\SocialiteServiceProvider::class,
+		Laravel\Cashier\CashierServiceProvider::class,
 
 		/*
 		 * Application Service Providers...
@@ -177,8 +178,20 @@ return [
 		// App\Providers\BroadcastServiceProvider::class,
 		App\Providers\EventServiceProvider::class,
 		App\Providers\RouteServiceProvider::class,
-		App\Providers\SocialServiceProvider::class,
+		App\Providers\Actor\User\SocialServiceProvider::class,
 
+		/*
+		 * Third Party Providers
+		 */
+		Watson\Sitemap\SitemapServiceProvider::class,
+		Collective\Html\HtmlServiceProvider::class,
+		Dimsav\Translatable\TranslatableServiceProvider::class,
+		//Arcanedev\LogViewer\LogViewerServiceProvider::class,
+		//Creativeorange\Gravatar\GravatarServiceProvider::class,
+		//Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+		//HieuLe\Active\ActiveServiceProvider::class,
+		//Spatie\Backup\BackupServiceProvider::class,
+		//Cohensive\Embed\EmbedServiceProvider::class,
 	],
 
 	/*
@@ -207,8 +220,10 @@ return [
 		'Eloquent' => Illuminate\Database\Eloquent\Model::class,
 		'Event' => Illuminate\Support\Facades\Event::class,
 		'File' => Illuminate\Support\Facades\File::class,
+		'Form' => Collective\Html\FormFacade::class,
 		'Gate' => Illuminate\Support\Facades\Gate::class,
 		'Hash' => Illuminate\Support\Facades\Hash::class,
+		'Html' => Collective\Html\HtmlFacade::class,
 		'Lang' => Illuminate\Support\Facades\Lang::class,
 		'Log' => Illuminate\Support\Facades\Log::class,
 		'Mail' => Illuminate\Support\Facades\Mail::class,
@@ -226,9 +241,15 @@ return [
 		'URL' => Illuminate\Support\Facades\URL::class,
 		'Validator' => Illuminate\Support\Facades\Validator::class,
 		'View' => Illuminate\Support\Facades\View::class,
+		//'Str' => Illuminate\Support\Str::class
 
+		/*
+		 * Third Party Aliases
+		 */
 		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
+		'SEO' => App\Classes\SEO\Facades\SEOTools::class,
+		'Breadcrumbs'=> App\Repositories\Common\Breadcrumbs::class,
+		'Sitemap' => Watson\Sitemap\Facades\Sitemap::class
 	],
 
 ];
