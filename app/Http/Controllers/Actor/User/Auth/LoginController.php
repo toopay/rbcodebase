@@ -3,7 +3,14 @@
 namespace App\Http\Controllers\Actor\User\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+//use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+
+use App\Repositories\Actor\User\UserRepositoryContract;
+use App\Services\Actor\User\Traits\AuthenticatesAndRegistersUsers;
+use App\Services\Actor\User\Traits\ConfirmUsers;
+use App\Services\Actor\User\Traits\UseSocialite;
+
 
 class LoginController extends Controller
 {
@@ -18,8 +25,14 @@ class LoginController extends Controller
 	|
 	*/
 
-	use AuthenticatesUsers;
-	// @TODO: Check:   use AuthenticatesAndRegistersUsers, ConfirmUsers, ThrottlesLogins, UseSocialite;
+	use AuthenticatesAndRegistersUsers, ConfirmUsers, ThrottlesLogins, UseSocialite;
+
+	/**
+	 * Override Username
+	 *
+	 * @var string
+	 */
+	protected $username = 'email';
 
 	/**
 	 * Where to redirect users after login.
@@ -27,6 +40,13 @@ class LoginController extends Controller
 	 * @var string
 	 */
 	protected $redirectTo = '/';
+
+	/**
+	 * Where to redirect users after they logout
+	 *
+	 * @var string
+	 */
+	protected $redirectAfterLogout = '/';
 
 	/**
 	 * Create a new controller instance.

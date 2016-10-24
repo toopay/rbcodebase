@@ -2,7 +2,7 @@
 
 namespace App\Providers\Actor\User;
 
-use App\UserSocial;
+use App\Models\Actor\User\UserSocial;
 use Illuminate\Support\ServiceProvider;
 
 class SocialServiceProvider extends ServiceProvider
