@@ -15,13 +15,13 @@
 
 				@include('includes.partials.messages')
 
-				{!! Form::open(['url' => 'login', 'class' => 'form']) !!}
+				{!! Form::open(['url' => 'login', 'class' => 'form sign-in']) !!}
 
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="form-group floating-labels">
 								{!! Form::label('email', trans('validation.attributes.app.email')) !!}
-								{!! Form::input('email', 'email', null) !!}
+								{!! Form::input('email', 'email', null,['class' => 'form-control']) !!}
 							</div>
 						</div>
 					</div>
@@ -29,14 +29,14 @@
 						<div class="col-xs-12">
 							<div class="form-group floating-labels">
 								{!! Form::label('password', trans('validation.attributes.app.password')) !!}
-								{!! Form::input('password', 'password', null) !!}
+								{!! Form::input('password', 'password', null,['class' => 'form-control']) !!}
 							</div>
 						</div>
 					</div>
 
 					<div class="row buttons">
 						<div class="col-xs-12 col-md-6">
-							{!! Form::submit(trans('labels.app.auth.login_button'), ['class' => 'btn-login btn btn-lg btn-info btn-block m-b-20']) !!}
+							{!! Form::submit(trans('labels.app.auth.login_button'), ['class' => 'btn btn-raised btn-lg btn-secondary btn-block']) !!}
 
 							{!! link_to('password/reset', trans('labels.app.passwords.forgot_password'), ['class' => 'pull-left']) !!}
 						</div>
@@ -60,8 +60,4 @@
 			@include('includes.partials.footer_links')
 		</p>
 	</div>
-@endsection
-
-@section('after-scripts-end')
-	<script src="/assets/js/pages-login.js"></script>
 @endsection

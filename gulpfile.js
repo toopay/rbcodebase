@@ -18,5 +18,25 @@ elixir(mix => {
 	//.compressHtml()
 
 	mix.sass('app.scss')
-	   .webpack('app.js');
+	   .webpack('app.js')
+
+	//IE scripts
+		.scripts([
+			'html5shiv.min.js',
+			'respond.min.js'
+		],'public/js/ie.js')
+
+	//Login\Registration styles
+		.styles([
+			'layouts/empty-view-1.css',
+			'main.css',
+			'global.css',
+			'pages/sign-in.css',
+		],'public/css/login-register.css');
+
+
+	mix.version([
+		'public/js/ie.js',
+		'public/css/login-register.css'
+	])
 });

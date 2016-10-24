@@ -1,0 +1,22 @@
+[data-layout="empty-view-1"] {
+  position: relative;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+}
+
+[data-layout="empty-view-1"] ::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+}
+
+[data-layout="empty-view-1"] .main {
+  transform-style: preserve-3d;
+  background: none;
+}
+
+html [data-layout="empty-view-1"] {
+  background: url(../../assets/images/314-1.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+/*# sourceMappingURL=login-registration.css.map */
