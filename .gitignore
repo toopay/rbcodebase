@@ -1,10 +1,19 @@
-/node_modules
-/public/storage
-/vendor
-/.idea
+### Mac ####
+.DS_Store
+
+### PHP ###
 Homestead.json
 Homestead.yaml
+/.idea
+
+### Laravel ###
 .env
+/vendor
+/node_modules
+/public/storage
+/public/uploads
+
+### Theme ###
 public/js/app.js
 public/js/app.js.amp
 public/css/app.css
