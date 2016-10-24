@@ -168,7 +168,6 @@ return [
 		 */
 
 		Laravel\Socialite\SocialiteServiceProvider::class,
-		Mpociot\Teamwork\TeamworkServiceProvider::class,
 
 		/*
 		 * Application Service Providers...
