@@ -246,10 +246,11 @@ return [
 		/*
 		 * Third Party Aliases
 		 */
-		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-		'SEO' => App\Classes\SEO\Facades\SEOTools::class,
 		'Breadcrumbs'=> App\Repositories\Common\Breadcrumbs::class,
-		'Sitemap' => Watson\Sitemap\Facades\Sitemap::class
+		'Debugbar' => Barryvdh\Debugbar\Facade::class,
+		'SEO' => App\Classes\SEO\Facades\SEOTools::class,
+		'Sitemap' => Watson\Sitemap\Facades\Sitemap::class,
+		'Socialite' => Laravel\Socialite\Facades\Socialite::class
 	],
 
 ];

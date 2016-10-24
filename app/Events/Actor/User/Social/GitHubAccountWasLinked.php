@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events\Social;
+namespace App\Events\Actor\User;
 
 use App\User;
 use Illuminate\Broadcasting\Channel;
@@ -10,7 +10,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class TwitterAccountWasLinked
+class GitHubAccountWasLinked
 {
 	use InteractsWithSockets, SerializesModels;
 

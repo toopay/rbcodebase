@@ -14,15 +14,15 @@
 		"dimsav/laravel-translatable": "6.*",
 		"watson/sitemap": " 2.0.*",
 		"dompdf/dompdf": "0.6.1",
-		"guzzlehttp/guzzle": "^6.2"
+		"guzzlehttp/guzzle": "^6.2",
+		"barryvdh/laravel-debugbar": "^2.3"
 	},
 	"require-dev": {
 		"fzaninotto/faker": "~1.4",
 		"mockery/mockery": "0.9.*",
 		"phpunit/phpunit": "~5.0",
 		"symfony/css-selector": "3.1.*",
-		"symfony/dom-crawler": "3.1.*",
-		"barryvdh/laravel-debugbar": "^2.1"
+		"symfony/dom-crawler": "3.1.*"
 	},
 	"autoload": {
 		"classmap": [
