@@ -2,11 +2,11 @@
 
 namespace App\Providers\Common;
 
-use App\Classes\SEO\Contracts;
-use App\Classes\SEO\OpenGraph;
-use App\Classes\SEO\SEOMeta;
-use App\Classes\SEO\SEOTools;
-use App\Classes\SEO\TwitterCards;
+use App\Repositories\Common\SEO\Contracts;
+use App\Repositories\Common\SEO\OpenGraph;
+use App\Repositories\Common\SEO\SEOMeta;
+use App\Repositories\Common\SEO\SEOTools;
+use App\Repositories\Common\SEO\TwitterCards;
 use Illuminate\Support\ServiceProvider;
 
 class SEOToolsServiceProvider extends ServiceProvider
