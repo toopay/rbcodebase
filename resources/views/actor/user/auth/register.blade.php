@@ -75,5 +75,11 @@
 		</div>
 		<button class="btn btn-raised btn-lg btn-secondary btn-block" type="submit">Sign up</button>
 		<p class="sign-up-link">I have an account <a href="{{ url('/login') }}">Sign in here</a></p>
+
+		<p class="social-buttons">
+			<a href="{{ url('login/facebook') }}" class="btn btn-solid btn-circle btn-facebook btn-lg"><i class="fa fa-facebook"></i></a>
+			<a href="{{ url('login/twitter') }}" class="btn btn-solid btn-circle btn-twitter btn-lg"><i class="fa fa-twitter"></i></a>
+			<a href="{{ url('login/linkedin') }}" class="btn btn-solid btn-circle btn-google btn-lg"><i class="fa fa-linkedin"></i></a>
+		</p>
 	</form>
 @endsection
