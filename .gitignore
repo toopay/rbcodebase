@@ -14,7 +14,7 @@ Homestead.yaml
 /public/uploads
 
 ### Theme ###
-public/js/app.js
-public/js/app.js.amp
-public/css/app.css
-public/css/app.css.map
+/public/assets
+/public/build
+/public/js
+/public/css

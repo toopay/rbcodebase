@@ -4,10 +4,12 @@
 	{{--{!! SEO::generate() !!}--}}
 	@yield('meta')
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="{{ elixir('/css/login-register.css') }}" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="{{ elixir('/css/common.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ elixir('css/actor-user-auth.css') }}" />
+	<meta name="_token" content="{{ csrf_token() }}" />
 	@yield('before-styles-end')
 	<!--[if IE]>
 	<script src="{{ elixir('js/ie.js') }}"></script>
@@ -17,17 +19,16 @@
 </head>
 <body data-layout="empty-view-1" data-palette="palette-0" data-direction="none">
 
-
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-12 main">
-			@yield('content')
-		</div>
+	<div class="actor-user-auth sign-in sign-up">
+		@yield('content')
+		<p class="copyright">
+			@include('includes.partials.footer_credit')
+			{{-- @include('includes.partials.footer_links') --}}
+		</p>
 	</div>
-</div>
 
 	@yield('before-scripts-end')
-	<!-- global scripts -->
+	<script src="{{ elixir('js/common.js') }}"></script>
 	@yield('after-scripts-end')
 </body>
 </html>

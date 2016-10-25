@@ -18,25 +18,65 @@ elixir(mix => {
 	//.compressHtml()
 
 	mix.sass('app.scss')
-	   .webpack('app.js')
+		.webpack('app.js')
 
-	//IE scripts
+	/*
+	 * Common
+	 */
+
+		// IE scripts
 		.scripts([
 			'html5shiv.min.js',
 			'respond.min.js'
 		],'public/js/ie.js')
 
-	//Login\Registration styles
+		.scripts([
+			'bootstrap.js',
+			'bootstrap.js'
+		],'public/js/common.js')
+
+		// Common
 		.styles([
-			'layouts/empty-view-1.css',
 			'main.css',
 			'global.css',
+			'animate.css',
+			'bootstrap/scss/bootstrap.css',
+			'font-awesome/font-awesome.css',
+			'pages/index.css',
+		],'public/css/common.css')
+
+	/*
+	 * Page Specific
+	 */
+
+		// Auth
+		.styles([
+			'layouts/empty-view-2.css',
 			'pages/sign-in.css',
-		],'public/css/login-register.css');
+			'pages/sign-up.css',
+		],'public/css/actor-user-auth.css')
 
+		// Error
+		.styles([
+			'layouts/empty-view-1.css',
+			'pages/error.css',
+		],'public/css/actor-user-error.css')
 
-	mix.version([
-		'public/js/ie.js',
-		'public/css/login-register.css'
-	])
+		; // Close
+
+	/*
+	 * Tools
+	 */
+
+		// Copy
+		mix.copy('resources/assets/fonts/font-awesome','public/assets/fonts/font-awesome');
+
+		// Version
+		mix.version([
+			'public/js/ie.js',
+			'public/js/common.js',
+			'public/css/common.css',
+			'public/css/actor-user-auth.css',
+			'public/css/actor-user-error.css'
+		])
 });

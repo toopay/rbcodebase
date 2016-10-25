@@ -29,7 +29,7 @@
 </head>
 <body class="{!! Route::getCurrentRoute()->getPath() !!}" data-layout="empty-layout" data-palette="palette-6" data-direction="none">
 
-	@include('includes.nav')
+	@include('includes.partials.nav')
 	@include('includes.partials.nav_links')
 
 	<div class="container-fluid">

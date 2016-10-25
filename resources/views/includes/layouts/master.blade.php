@@ -29,7 +29,7 @@
 </head>
 <body data-layout="default-sidebar" data-palette="palette-6" data-direction="none">
 
-	@include('includes.nav')
+	@include('includes.partials.nav')
 	@include('includes.partials.nav_links')
 
 	<div class="container-fluid">
