@@ -29,6 +29,7 @@
 
 	@yield('before-scripts-end')
 	<script src="{{ elixir('js/app.js') }}"></script>
+	<script src="{{ elixir('js/common.js') }}"></script>
 	@yield('after-scripts-end')
 </body>
 </html>

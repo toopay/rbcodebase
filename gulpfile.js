@@ -34,10 +34,24 @@ elixir(mix => {
 		.styles([
 			'main.css',
 			'global.css',
-			'animate.css',
-			'bootstrap/scss/bootstrap.css',
+			'colors.css',
+			'box-shadows.css',
 			'font-awesome/font-awesome.css',
-			'pages/index.css',
+			'animate.css',
+			'layouts/homepage.css',
+			'layouts/default-sidebar-1.css',
+			'layouts/default-sidebar-2.css',
+			'layouts/empty-view-1.css',
+			'layouts/empty-view-2.css',
+			'layouts/empty-view-3.css',
+			'color-system/material-design-colors.css',
+			'icons/font-awesome.css',
+			'icons/material-design-icons.css',
+			'pages/error.css',
+			'pages/sign-in.css',
+			'pages/sign-up.css',
+			'ui/buttons.css',
+			'ui/progress-bars.css',
 			'ui/social-media-buttons.css'
 		],'public/css/common.css')
 
@@ -59,6 +73,16 @@ elixir(mix => {
 			'layouts/empty-view-1.css',
 			'pages/error.css',
 		],'public/css/actor-user-error.css')
+
+		/*
+		* Page specific js files
+		*/
+
+		.scripts([
+			'plugins/tether/dist/js/tether.js',
+			'plugins/bootstrap-material-design/bootstrap-material-design.iife.js',
+			'plugins/app.js'
+		],'public/js/common.js')
 
 		; // Close
 
