@@ -11,7 +11,7 @@ use App\Http\Requests\Actor\User\Auth\RegisterRequest;
  */
 trait RegistersUsers
 {
-	use RedirectsUsers;
+//	use RedirectsUsers;
 
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

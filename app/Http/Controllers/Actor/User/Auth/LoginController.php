@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Actor\User\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Services\Actor\User\Traits\RegistersUsers;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 /*
@@ -25,7 +26,7 @@ class LoginController extends Controller
 	|
 	*/
 
-	use AuthenticatesUsers; //, ThrottlesLogins;
+	use AuthenticatesUsers,RegistersUsers; //, ThrottlesLogins;
 	//use AuthenticatesAndRegistersUsers, ConfirmUsers, , UseSocialite;
 
 	/**
