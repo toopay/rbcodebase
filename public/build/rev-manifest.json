@@ -1,4 +1,7 @@
 {
-  "css/login-register.css": "css/login-register-68d2b3ca52.css",
-  "js/ie.js": "js/ie-1d0e77dbdf.js"
+  "css/actor-user-auth.css": "css/actor-user-auth-f22ee4d68a.css",
+  "css/actor-user-error.css": "css/actor-user-error-850289e12f.css",
+  "css/common.css": "css/common-20c8c6aa2f.css",
+  "js/common.js": "js/common-dfe149f4ec.js",
+  "js/ie.js": "js/ie-a47252dcd3.js"
 }
