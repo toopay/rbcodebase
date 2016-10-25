@@ -21,7 +21,7 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12 main">
+			<div class="col-xs-12">
 				@yield('content')
 				<p class="copyright text-sm m-t-20">
 					@include('includes.partials.footer_credit')
