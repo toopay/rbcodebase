@@ -30,11 +30,6 @@ elixir(mix => {
 			'respond.min.js'
 		],'public/js/ie.js')
 
-		.scripts([
-			'bootstrap.js',
-			'bootstrap.js'
-		],'public/js/common.js')
-
 		// Common
 		.styles([
 			'main.css',
@@ -43,6 +38,7 @@ elixir(mix => {
 			'bootstrap/scss/bootstrap.css',
 			'font-awesome/font-awesome.css',
 			'pages/index.css',
+			'ui/social-media-buttons.css'
 		],'public/css/common.css')
 
 	/*
@@ -54,6 +50,8 @@ elixir(mix => {
 			'layouts/empty-view-2.css',
 			'pages/sign-in.css',
 			'pages/sign-up.css',
+			'ui/buttons.css',
+			'roboto.css'
 		],'public/css/actor-user-auth.css')
 
 		// Error
