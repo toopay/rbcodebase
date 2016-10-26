@@ -132,12 +132,7 @@ elixir(mix => {
 			'ui/typography.css',
 			'user-widgets/user-widget-1.css',
 			'text-widgets/text-widget-1.css',
-			'documentation/customization.css',
-			'documentation/code-structure.css',
-			'documentation/credits.css',
-			'documentation/layout.css',
-			'documentation/styles.css'
-		],'public/css/admin.css')
+		],'public/css/master.css')
 
 		.scripts([
 			'plugins/jquery/dist/jquery.min.js',
@@ -155,7 +150,7 @@ elixir(mix => {
 			'plugins/left-sidebar.js',
 			'plugins/navbar-1.js',
 			'plugins/icons/font-awesome.js',
-		],'public/js/admin.js')
+		],'public/js/master.js')
 
 	; // Close
 
@@ -169,11 +164,11 @@ elixir(mix => {
 		// Version
 		mix.version([
 			'public/js/ie.js',
-			'public/js/common.js',
 			'public/css/common.css',
+			'public/js/common.js',
+			'public/css/master.css',
+			'public/js/master.js',
 			'public/css/actor-user-auth.css',
-			'public/css/actor-user-error.css',
-			'public/css/admin.css',
-			'public/js/admin.js'
+			'public/css/actor-user-error.css'
 		])
 });

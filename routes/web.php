@@ -20,12 +20,12 @@ Auth::routes();
  * Common Routes
  */
 Route::group(['namespace' => 'Common'], function () {
-	//require base_path('routes/Web/Common/Common.php');
-	//require base_path('routes/Web/Common/Search.php');
-	//require base_path('routes/Web/Common/Sitemap.php');
-	//require base_path('routes/Web/Common/Marketing.php');
-	//require base_path('routes/Web/Common/Language.php');
-	//require base_path('routes/Web/Common/Tools.php');
+	require base_path('routes/Web/Common/Common.php');
+	require base_path('routes/Web/Common/Search.php');
+	require base_path('routes/Web/Common/Sitemap.php');
+	require base_path('routes/Web/Common/Marketing.php');
+	require base_path('routes/Web/Common/Language.php');
+	require base_path('routes/Web/Common/Tools.php');
 });
 /**
  * Actor Routes

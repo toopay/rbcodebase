@@ -3,7 +3,7 @@
 namespace App\Services\Actor\User\Traits;
 
 use App\Http\Requests\Actor\User\ChangePasswordRequest;
-use App\Classes\Breadcrumbs;
+use App\Repositories\Common\Breadcrumbs;
 
 /**
  * Class ChangePasswords

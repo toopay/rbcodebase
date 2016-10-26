@@ -42,6 +42,21 @@ a:hover, a:focus, a:active,
   margin-bottom: 30px;
 }
 
+.footer {
+  font-size: 13px;
+  color: #dadada;
+}
+.footer a {
+  color: #c0c0c0;
+}
+
+.align-right { text-align: right; }
+.align-left { text-align: left; }
+
+.hidden {
+  display: none !important;
+}
+
 ::-moz-selection {
   background-color: #ffccbc;
 }

@@ -1,5 +1,5 @@
 @if (isset($breadcrumbs))
-	<ol class="breadcrumb breadcrumb-bg icon-angle-right">
+	<ol class="breadcrumb icon-angle-right no-bg">
 		@foreach ($breadcrumbs as $breadcrumb)
 			@if (!$breadcrumb->last)
 				<li><a href="{{ $breadcrumb->url }}">{!! $breadcrumb->title !!}</a></li>

@@ -1,9 +1,9 @@
 {
   "css/actor-user-auth.css": "css/actor-user-auth-43b0104339.css",
   "css/actor-user-error.css": "css/actor-user-error-850289e12f.css",
-  "css/admin.css": "css/admin-6cc996875f.css",
-  "css/common.css": "css/common-91b458a27b.css",
-  "js/admin.js": "js/admin-0d28d5231c.js",
-  "js/common.js": "js/common-060e6f98fb.js",
-  "js/ie.js": "js/ie-1d0e77dbdf.js"
+  "css/common.css": "css/common-3085fda75b.css",
+  "css/master.css": "css/master-c758968ff3.css",
+  "js/common.js": "js/common-b04f30543d.js",
+  "js/ie.js": "js/ie-a47252dcd3.js",
+  "js/master.js": "js/master-a179473b37.js"
 }

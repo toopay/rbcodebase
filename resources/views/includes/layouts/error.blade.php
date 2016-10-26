@@ -5,15 +5,15 @@
 	@yield('meta')
 
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="{{ elixir('/css/common.css') }}" />
-	<link rel="stylesheet" type="text/css" href="{{ elixir('/css/actor-user-error.css') }}" />
 	<meta name="_token" content="{{ csrf_token() }}" />
 	@yield('before-styles-end')
 	<!--[if IE]>
 	<script src="{{ elixir('js/ie.js') }}"></script>
 	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="{{ elixir('css/common.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ elixir('css/actor-user-error.css') }}" />
 	@yield('after-styles-end')
 	@include('includes.partials.ga')
 </head>
