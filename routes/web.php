@@ -10,7 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+//Temporary route for admin panel
+Route::get('admin-test',function(){
+	return view('admin.example');
+});
 Auth::routes();
 
 /**

@@ -55,9 +55,9 @@ elixir(mix => {
 			'ui/social-media-buttons.css'
 		],'public/css/common.css')
 
-	/*
-	 * Page Specific
-	 */
+		/*
+		 * Page Specific
+		 */
 
 		// Auth
 		.styles([
@@ -80,15 +80,88 @@ elixir(mix => {
 
 		.scripts([
 			'plugins/tether/dist/js/tether.js',
-			'plugins/bootstrap-material-design/bootstrap-material-design.iife.js',
+			'plugins/bootstrap-material-design/dist/bootstrap-material-design.iife.js',
 			'plugins/app.js'
 		],'public/js/common.js')
 
-		; // Close
 
-	/*
-	 * Tools
-	 */
+
+		/*
+		 * Admin layout assets
+		 */
+
+		.styles([
+			'roboto.css',
+			'material-icons.css',
+			'font-awesome/font-awesome.css',
+			'flag-icon-css.css',
+			'main.css',
+			'global.css',
+			'colors.css',
+			'box-shadows.css',
+			'animate.css',
+			'layouts/homepage.css',
+			'layouts/default-sidebar-1.css',
+			'left-sidebars/left-sidebar-1.css',
+			'navbars/navbar-1.css',
+			'right-sidebars/right-sidebar-1.css',
+			'helpers/margin.css',
+			'helpers/padding.css',
+			'helpers/text.css',
+			'helpers/border.css',
+			'helpers/height.css',
+			'helpers/width.css',
+			'helpers/other.css',
+			'color-system/material-design-colors.css',
+			'icons/flags.css',
+			'icons/font-awesome.css',
+			'icons/weather-icons.css',
+			'icons/material-design-icons.css',
+			'extras/mousetrap.css',
+			'jumbotron/jumbotron-1.css',
+			'forms/basic.css',
+			'forms/checkboxes.css',
+			'forms/radios.css',
+			'forms/sliders.css',
+			'ui/badges.css',
+			'ui/breadcrumbs.css',
+			'ui/buttons.css',
+			'ui/cards.css',
+			'ui/dropdowns.css',
+			'ui/tooltips.css',
+			'ui/typography.css',
+			'user-widgets/user-widget-1.css',
+			'text-widgets/text-widget-1.css',
+			'documentation/customization.css',
+			'documentation/code-structure.css',
+			'documentation/credits.css',
+			'documentation/layout.css',
+			'documentation/styles.css'
+		],'public/css/admin.css')
+
+		.scripts([
+			'plugins/jquery/dist/jquery.min.js',
+			'plugins/lodash/dist/lodash.min.js',
+			'plugins/modernizr.js',
+			'plugins/tether/dist/js/tether.js',
+			'plugins/jquery-storage-api/jquery.storageapi.min.js',
+			'plugins/moment/moment.js',
+			'plugins/mousetrap/mousetrap.js',
+			'plugins/bootstrap-material-design/dist/bootstrap-material-design.iife.js',
+			'plugins/highlight.min.js',
+			'plugins/jquery-fullscreen/jquery.fullscreen-min.js',
+			'plugins/functions.js',
+			'plugins/app.js',
+			'plugins/left-sidebar.js',
+			'plugins/navbar-1.js',
+			'plugins/icons/font-awesome.js',
+		],'public/js/admin.js')
+
+	; // Close
+
+		/*
+		 * Tools
+		 */
 
 		// Copy
 		mix.copy('resources/assets/fonts/font-awesome','public/assets/fonts/font-awesome');
@@ -99,6 +172,8 @@ elixir(mix => {
 			'public/js/common.js',
 			'public/css/common.css',
 			'public/css/actor-user-auth.css',
-			'public/css/actor-user-error.css'
+			'public/css/actor-user-error.css',
+			'public/css/admin.css',
+			'public/js/admin.js'
 		])
 });

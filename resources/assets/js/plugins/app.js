@@ -14,11 +14,11 @@
 				});
 				*/
 		//console.log($('body').bootstrapMaterialDesign());
-		$('body').bootstrapMaterialDesign({
-			text: {
-				selector: [`input:not([type=range]):not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=file]):not([type=button]):not([type=submit]):not([type=reset])`]
-			},
-		});
+		// $('body').bootstrapMaterialDesign({
+		// 	text: {
+		// 		selector: [`input:not([type=range]):not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=file]):not([type=button]):not([type=submit]):not([type=reset])`]
+		// 	},
+		// });
 		var colors = {
 			'white': '#ffffff',
 			'black': '#000000',
