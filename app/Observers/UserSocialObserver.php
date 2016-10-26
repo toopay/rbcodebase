@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\UserSocial;
+use App\Models\Actor\User\UserSocial;
 
 class UserSocialObserver
 {
