@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail\Social;
+namespace App\Mail\Actor\User;
 
 use App\Models\Actor\User;
 use Illuminate\Bus\Queueable;
@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class TwitterAccountLinked extends Mailable
+class AuthTwitterAccountLinked extends Mailable
 {
 	use Queueable, SerializesModels;
 
@@ -31,7 +31,7 @@ class TwitterAccountLinked extends Mailable
 	 */
 	public function build()
 	{
-		return $this->subject('Twitter account linked')->view('email.social.twitter_linked')->with([
+		return $this->subject('Twitter account linked')->view('email.actor.user.twitter_linked')->with([
 			'user' => $this->user,
 		]);
 	}

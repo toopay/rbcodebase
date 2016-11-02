@@ -11,7 +11,7 @@ Route::group(['namespace' => 'User'], function () {
 	Route::group(['middleware' => 'web'], function () {
 
 		// Profiles
-		//Route::get('@{username}', 'ProfileController@show')->name('actor.user.profile.show');
+		Route::get('@{username}', 'ProfileController@show')->name('actor.user.profile.show');
 	});
 
 
@@ -19,7 +19,7 @@ Route::group(['namespace' => 'User'], function () {
 	 * Logged In
 	 */
 	Route::group(['middleware' => 'auth'], function () {
-/*
+
 		// Profile
 		Route::group(['prefix' => 'profile'], function () {
 			// Management
@@ -53,8 +53,9 @@ Route::group(['namespace' => 'User'], function () {
 				Route::get('/', 'WalletController@index')->name('actor.user.wallet.index');
 				Route::get('/history', 'WalletController@history')->name('actor.user.wallet.history');
 			});
+
 		});
-*/
+
 	});
 
 

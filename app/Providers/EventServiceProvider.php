@@ -13,11 +13,11 @@ class EventServiceProvider extends ServiceProvider
 	 * @var array
 	 */
 	protected $listen = [
-		'App\Events\Social\GitHubAccountWasLinked' => [
-			'App\Listeners\Social\SendGitHubLinkedEmail',
+		'App\Events\Actor\User\AuthGitHubAccountWasLinked' => [
+			'App\Listeners\Actor\User\AuthSendGitHubLinkedEmail',
 		],
-		'App\Events\Social\TwitterAccountWasLinked' => [
-			'App\Listeners\Social\SendTwitterLinkedEmail',
+		'App\Events\Actor\User\AuthTwitterAccountWasLinked' => [
+			'App\Listeners\Actor\User\AuthSendTwitterLinkedEmail',
 		],
 	];
 

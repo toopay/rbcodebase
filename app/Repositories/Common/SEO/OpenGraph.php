@@ -320,9 +320,9 @@ class OpenGraph implements OpenGraphContract
 	public function setProfile($attributes = [])
 	{
 		$validkeys = [
-			'first_name',
-			'last_name',
-			'username',
+			'name_first',
+			'name_last',
+			'name_slug',
 			'gender',
 		];
 

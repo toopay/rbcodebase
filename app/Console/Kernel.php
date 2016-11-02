@@ -5,6 +5,10 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+/**
+ * Class Kernel
+ * @package App\Console
+ */
 class Kernel extends ConsoleKernel
 {
 	/**
@@ -13,7 +17,7 @@ class Kernel extends ConsoleKernel
 	 * @var array
 	 */
 	protected $commands = [
-		Commands\MigrateReinstall::class,
+		//
 	];
 
 	/**
@@ -26,13 +30,6 @@ class Kernel extends ConsoleKernel
 	{
 		// $schedule->command('inspire')
 		//          ->hourly();
-
-		/**
-		 * Laravel Backup Commands
-		 */
-		// $schedule->command('backup:clean')->daily()->at('01:00');
-		// $schedule->command('backup:run')->daily()->at('02:00');
-
 	}
 
 	/**

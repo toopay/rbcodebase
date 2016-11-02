@@ -16,8 +16,8 @@ $factory->define(App\Models\Actor\User\User::class, function (Faker\Generator $f
 	static $password;
 
 	return [
-		'name_first' => $faker->first_name,
-		'name_last' => $faker->last_name,
+		'name_first' => $faker->name_first,
+		'name_last' => $faker->name_last,
 		'name_slug' => $faker->user_name,
 		'email' => $faker->unique()->safeEmail,
 		'verified_email' => true,

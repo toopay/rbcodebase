@@ -2,6 +2,7 @@
 
 //Route::get('macros', 'FrontendController@macros')->name('app.macros');
 
+	Route::get('dashboard', 'DashboardController@index')->name('common.dashboard');
 
 
 /**

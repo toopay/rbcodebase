@@ -1,7 +1,8 @@
 @extends('includes.layouts.auth')
 
 @section('content')
-	<div class="login-page text-center animated fadeIn delay-2000">
+
+	<div class="login-page text-center animated fadeIn delay-2000 {{ $errors->has('password') ? ' has-error' : '' }}">
 		<h1>
 			Account login
 		</h1>
@@ -22,6 +23,11 @@
 							<div class="form-group floating-labels">
 								{!! Form::label('email', trans('validation.attributes.app.email')) !!}
 								{!! Form::input('email', 'email', null,['class' => 'form-control']) !!}
+								@if ($errors->has('email'))
+									<span class="help-block">
+											<strong>{{ $errors->first('email') }}</strong>
+										</span>
+								@endif
 							</div>
 						</div>
 					</div>
@@ -30,6 +36,11 @@
 							<div class="form-group floating-labels">
 								{!! Form::label('password', trans('validation.attributes.app.password')) !!}
 								{!! Form::input('password', 'password', null,['class' => 'form-control']) !!}
+								@if ($errors->has('password'))
+									<span class="help-block">
+											<strong>{{ $errors->first('password') }}</strong>
+										</span>
+								@endif
 							</div>
 						</div>
 					</div>

@@ -34,13 +34,13 @@ return [
 
 		'github' => [
 
-			'created' => \App\Events\Social\GitHubAccountWasLinked::class,
+			'created' => \App\Events\Actor\User\AuthGitHubAccountWasLinked::class,
 
 		],
 
 		'twitter' => [
 
-			'created' => \App\Events\Social\TwitterAccountWasLinked::class,
+			'created' => \App\Events\Actor\User\AuthTwitterAccountWasLinked::class,
 
 		],
 

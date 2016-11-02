@@ -26,7 +26,7 @@
 	<div class="row m-b-20 search-results">
 		<div class="col-xs-12">
 
-			@if (count($terms))
+			@if (!empty($terms))
 			<hr class="m-y-2">
 			<h2>Glossary</h2>
 				@foreach($terms as $term)
@@ -44,7 +44,7 @@
 			@TODO
 			--}}
 
-			@if (count($forum_threads))
+			@if (!empty($forum_threads))
 			<hr class="m-y-2">
 			<h2>Forum</h2>
 				@foreach($forum_threads as $forum_thread)
@@ -57,7 +57,7 @@
 			@endif
 
 
-			@if (count($users))
+			@if (!empty($users))
 			<hr class="m-y-2">
 			<h2>Users</h2>
 				@foreach($users as $user)

@@ -39,8 +39,7 @@ Route::group(['namespace' => 'Actor'], function () {
  * App Routes
  */
 Route::group(['namespace' => 'App'], function () {
-	// Common
-	//require base_path('routes/Web/App/Dashboard.php');
+
 	// Application Specific
 	//require base_path('routes/Web/App/Forum.php');
 });
@@ -72,7 +71,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
 	 * Common Routes
 	 */
 	Route::group(['namespace' => 'Common'], function () {
-		//require base_path('routes/Web/Admin/Common/Dashboard.php');
+		require base_path('routes/Web/Admin/Common/Dashboard.php');
 		//require base_path('routes/Web/Admin/Common/Mail.php');
 		//require base_path('routes/Web/Admin/Common/LogViewer.php');
 	});

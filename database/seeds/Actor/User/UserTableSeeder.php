@@ -3,6 +3,7 @@
 use Carbon\Carbon as Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Actor\User\User;
 
 /**
  * Class UserTableSeeder
@@ -11,50 +12,29 @@ class UserTableSeeder extends Seeder
 {
 	public function run()
 	{
-		if (env('DB_CONNECTION') == 'mysql') {
-			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-		}
+		// Reset Data
+		DB::table(config('actor.users_table'))->delete();
 
-		if (env('DB_CONNECTION') == 'mysql') {
-			DB::table(config('access.users_table'))->truncate();
-		} elseif (env('DB_CONNECTION') == 'sqlite') {
-			DB::statement('DELETE FROM ' . config('access.users_table'));
-		} else {
-			//For PostgreSQL or anything else
-			DB::statement('TRUNCATE TABLE ' . config('access.users_table') . ' CASCADE');
-		}
-
-		//Add the master administrator, user id of 1
-		$users = [
-			[
-				'name_first'        => 'Rob',
-				'name_last'         => 'Bertholf',
-				'name_slug'         => 'rob',
-				'email'             => 'rob@bertholf.com',
-				'password'          => bcrypt('asdfasdf'),
-				'confirmation_code' => md5(uniqid(mt_rand(), true)),
-				'confirmed'         => true,
-				'created_at'        => Carbon::now(),
-				'updated_at'        => Carbon::now(),
-			],
-			[
-				'name_first'        => 'Default',
-				'name_last'         => 'User',
-				'name_slug'         => 'defaultuser',
-				'email'             => 'user@user.com',
-				'password'          => bcrypt('password'),
-				'confirmation_code' => md5(uniqid(mt_rand(), true)),
-				'confirmed'         => true,
-				'created_at'        => Carbon::now(),
-				'updated_at'        => Carbon::now(),
-			],
+		// Add Default Users
+		$seed =
+		[ // name_first, name_last, name_slug, email, password
+			['Rob', 'Bertholf', 'rob', 'rob@bertholf.com', bcrypt('asdfasdf')],
+			['Tester', 'Lester', 'tester', 'rob1@bertholf.com', bcrypt('asdfasdf')],
 		];
 
-		// Add users
-		DB::table(config('access.users_table'))->insert($users);
+		foreach ($seed as $key => $value) {
+			// Get Values from Array
+			$name_first = $value[0];
+			$name_last = $value[1];
+			$name_slug = $value[2];
+			$email = $value[3];
+			$password = $value[4];
 
-		if (env('DB_CONNECTION') == 'mysql') {
-			DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+			// Create Record
+			$record = User::create(['name_first' => $name_first, 'name_last' => $name_last, 'name_slug' => $name_slug, 'email' => $email, 'password' => $password, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+			echo 'Added User: '. $record->$name_first .' '. $record->$name_last . PHP_EOL;
+
 		}
+
 	}
 }

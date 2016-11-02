@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Common;
 use App\Repositories\Common\Breadcrumbs;
 use App\Http\Controllers\Controller;
 use App\Models\Actor\User\User;
-use App\Models\App\Forum\ForumThread;
-use App\Models\App\Term\Term;
 use Illuminate\Http\Request;
 use SEO;
 
@@ -20,7 +18,6 @@ class SearchController extends Controller
 	public function __construct()
 	{
 		// Set Base Breadcrumb
-
 		Breadcrumbs::push('<i class="fa fa-home"></i>', route('marketing.index'));
 	}
 
@@ -58,15 +55,16 @@ class SearchController extends Controller
 		// Get CMS
 
 		// Get Forum
-		$forum_threads = ForumThread::whereTranslationLike('title', 'like', '%'.$query.'%')->orWhere('slug', 'like', '%'.$query.'%')->with('topic')->translated()->get();
+
+		$forum_threads = ''; // = ForumThread::whereTranslationLike('title', 'like', '%'.$query.'%')->orWhere('slug', 'like', '%'.$query.'%')->with('topic')->translated()->get();
 			// @TODO: whereTranslationLike('title', '%'.$query.'%')->
 			// @TODO: check comments
-		$count = $count + $forum_threads->count();
+		//$count = $count + $forum_threads->count();
 
 		// Get Terms
-		$terms = Term::whereTranslationLike('text', '%'.$query.'%')->orWhere('slug', 'like', '%'.$query.'%')->translated()->get();
+		$terms = ''; // = Term::whereTranslationLike('text', '%'.$query.'%')->orWhere('slug', 'like', '%'.$query.'%')->translated()->get();
 			// @TODO: whereTranslationLike('title', '%'.$query.'%')->
-		$count = $count + $terms->count();
+		//$count = $count + $terms->count();
 
 		// Get Users
 		$users = User::where('name_first', 'like', '%'.$query.'%')->orWhere('name_last', 'like', '%'.$query.'%')->get();

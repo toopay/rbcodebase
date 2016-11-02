@@ -7,7 +7,7 @@
 					<span>Peak UI</span>
 				</a>
 			</div>
-			@ include('includes.partials.nav_search')
+			@include('includes.partials.nav_search')
 
 			@ include('includes.partials.nav_brand')
 

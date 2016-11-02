@@ -2,6 +2,8 @@
 
 return [
 
+	// @TODO: Merge with config.actor
+
 	/*
 	|--------------------------------------------------------------------------
 	| Authentication Defaults
@@ -69,11 +71,15 @@ return [
 			'driver' => 'eloquent',
 			'model' => App\Models\Actor\User\User::class,
 		],
-
-		// 'users' => [
+		// @TODO: Cleanup:  'users' => [
 		//     'driver' => 'database',
 		//     'table' => 'users',
 		// ],
+
+		//'api_users' => [
+		//		'driver' => 'externalauthapi',
+		//		'model' => App\Model\Staff::class,
+		//],
 	],
 
 	/*

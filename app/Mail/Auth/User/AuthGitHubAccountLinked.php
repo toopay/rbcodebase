@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail\Social;
+namespace App\Mail\Actor\User;
 
 use App\Models\Actor\User;
 use Illuminate\Bus\Queueable;
@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class GitHubAccountLinked extends Mailable
+class AuthGitHubAccountLinked extends Mailable
 {
 	use Queueable, SerializesModels;
 
@@ -31,7 +31,7 @@ class GitHubAccountLinked extends Mailable
 	 */
 	public function build()
 	{
-		return $this->subject('GitHub account linked')->view('email.social.github_linked')->with([
+		return $this->subject('GitHub account linked')->view('email.actor.user.github_linked')->with([
 			'user' => $this->user
 		]);
 	}

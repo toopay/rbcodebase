@@ -7,23 +7,23 @@
 		<p>
 			Please enter your email address and password to create your account
 		</p>
-		<div class="form-group">
+		<div class="form-group{{ $errors->has('name_first') ? ' has-error' : '' }}">
 			<label class="bmd-label-floating">First name</label>
-			<input type="text" id="first_name" name="first_name" class="form-control">
+			<input type="text" id="name_first" name="name_first" class="form-control">
 			<span class="bmd-help">Please enter your first name</span>
-			@if ($errors->has('first_name'))
+			@if ($errors->has('name_first'))
 				<span class="help-block">
-						<strong>{{ $errors->first('first_name') }}</strong>
+						<strong>{{ $errors->first('name_first') }}</strong>
 					</span>
 			@endif
 		</div>
 		<div class="form-group">
 			<label class="bmd-label-floating">Last name</label>
-			<input type="text" id="last_name" name="last_name" class="form-control">
+			<input type="text" id="name_last" name="name_last" class="form-control">
 			<span class="bmd-help">Please enter your last name</span>
-			@if ($errors->has('last_name'))
+			@if ($errors->has('name_last'))
 				<span class="help-block">
-						<strong>{{ $errors->first('last_name') }}</strong>
+						<strong>{{ $errors->first('name_last') }}</strong>
 					</span>
 			@endif
 		</div>
@@ -39,11 +39,11 @@
 		</div>
 		<div class="form-group">
 			<label class="bmd-label-floating">Username</label>
-			<input type="text" id="username" name="username" class="form-control">
+			<input type="text" id="name_slug" name="name_slug" class="form-control">
 			<span class="bmd-help">Please enter your username</span>
-			@if ($errors->has('username'))
+			@if ($errors->has('name_slug'))
 				<span class="help-block">
-						<strong>{{ $errors->first('username') }}</strong>
+						<strong>{{ $errors->first('name_slug') }}</strong>
 					</span>
 			@endif
 		</div>

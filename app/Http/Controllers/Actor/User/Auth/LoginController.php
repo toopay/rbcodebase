@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Actor\User\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Services\Actor\User\Traits\RegistersUsers;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+//use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use App\Services\Actor\User\Traits\AuthenticatesAndRegistersUsers;
 /*
 use App\Repositories\Actor\User\UserRepositoryContract;
-use App\Services\Actor\User\Traits\AuthenticatesAndRegistersUsers;
 use App\Services\Actor\User\Traits\ConfirmUsers;
-use App\Services\Actor\User\Traits\UseSocialite;
 */
+use App\Services\Actor\User\Traits\UseSocialite;
 
 class LoginController extends Controller
 {
@@ -26,7 +26,7 @@ class LoginController extends Controller
 	|
 	*/
 
-	use AuthenticatesUsers,RegistersUsers; //, ThrottlesLogins;
+	use AuthenticatesAndRegistersUsers, RegistersUsers, UseSocialite, ThrottlesLogins;
 	//use AuthenticatesAndRegistersUsers, ConfirmUsers, , UseSocialite;
 
 	/**

@@ -14,7 +14,7 @@ class SocialServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		UserSocial::observe(\App\Observers\UserSocialObserver::class);
+		UserSocial::observe(\App\Observers\Actor\User\UserSocialObserver::class);
 	}
 
 	/**

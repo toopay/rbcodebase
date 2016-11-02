@@ -10,7 +10,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class GitHubAccountWasLinked
+class AuthGitHubAccountWasLinked
 {
 	use InteractsWithSockets, SerializesModels;
 
