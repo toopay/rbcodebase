@@ -4,7 +4,7 @@
 
 	<div class="login-page text-center animated fadeIn delay-2000 {{ $errors->has('password') ? ' has-error' : '' }}">
 		<h1>
-			Account login
+			{{ trans('labels.actor.user.auth.login_box_title') }}
 		</h1>
 		<h4>
 			Please enter your email address and password to login
@@ -22,7 +22,7 @@
 						<div class="col-xs-12">
 							<div class="form-group floating-labels">
 								{!! Form::label('email', trans('validation.attributes.app.email')) !!}
-								{!! Form::input('email', 'email', null,['class' => 'form-control']) !!}
+								{{ Form::input('email', 'email', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.email')]) }}
 								@if ($errors->has('email'))
 									<span class="help-block">
 											<strong>{{ $errors->first('email') }}</strong>
@@ -31,11 +31,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="row m-b-40">
+					<div class="row">
 						<div class="col-xs-12">
 							<div class="form-group floating-labels">
-								{!! Form::label('password', trans('validation.attributes.app.password')) !!}
-								{!! Form::input('password', 'password', null,['class' => 'form-control']) !!}
+								{{ Form::label('password', trans('validation.attributes.frontend.password'), ['class' => 'col-md-4 control-label']) }}
+								{{ Form::input('password', 'password', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.password')]) }}
 								@if ($errors->has('password'))
 									<span class="help-block">
 											<strong>{{ $errors->first('password') }}</strong>
@@ -44,12 +44,21 @@
 							</div>
 						</div>
 					</div>
+					<div class="row m-b-40">
+						<div class="col-xs-12">
+							<div class="checkbox">
+								<label>
+									{{ Form::checkbox('remember') }} {{ trans('labels.actor.user.auth.remember_me') }}
+								</label>
+							</div>
+						</div>
+					</div>
 
 					<div class="row buttons">
 						<div class="col-xs-12 col-md-6">
-							{!! Form::submit(trans('labels.app.auth.login_button'), ['class' => 'btn btn-raised btn-lg btn-secondary btn-block']) !!}
+							{{ Form::submit(trans('labels.actor.user.auth.login_button'), ['class' => 'btn btn-primary', 'style' => 'margin-right:15px']) }}
 
-							{!! link_to('password/reset', trans('labels.app.passwords.forgot_password'), ['class' => 'pull-left']) !!}
+							{{ link_to_route('actor.user.auth.password.reset', trans('labels.frontend.passwords.forgot_password')) }}
 						</div>
 						<div class="col-xs-12 col-md-6"> <a href="{{ route('actor.user.auth.register') }}" class="btn btn-lg btn-danger btn-block m-b-20">Register</a>
 						</div>
@@ -59,11 +68,7 @@
 			</div>
 		</div>
 		<p class="social-buttons">
-			<a href="{{ url('login/facebook') }}" class="btn btn-solid btn-circle btn-lg"><i class="fa fa-facebook"></i></a>
-			<a href="{{ url('login/twitter') }}" class="btn btn-solid btn-circle btn-lg"><i class="fa fa-twitter"></i></a>
-			<a href="{{ url('login/google') }}" class="btn btn-solid btn-circle btn-lg"><i class="fa fa-google"></i></a>
-			<a href="{{ url('login/linkedin') }}" class="btn btn-solid btn-circle btn-lg"><i class="fa fa-linkedin"></i></a>
-			<a href="{{ url('login/github') }}" class="btn btn-solid btn-circle btn-lg"><i class="fa fa-github"></i></a>
+			{!! $socialite_links !!}
 		</p>
 		<p class="copyright text-sm">
 			@include('includes.partials.footer_credit')

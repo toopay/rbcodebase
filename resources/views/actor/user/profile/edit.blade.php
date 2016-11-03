@@ -8,7 +8,7 @@
 
 				<h2>{{ trans('labels.app.user.profile.update_information') }}</h2>
 
-				{!! Form::model($user, ['route' => 'actor.user.profile.update', 'class' => 'form-horizontal', 'method' => 'PATCH']) !!}
+				{{ Form::model($logged_in_user, ['route' => 'actor.user.profile.update', 'class' => 'form-horizontal', 'method' => 'PATCH']) }}
 
 					<div class="form-group">
 						{!! Form::label('name_first', trans('validation.attributes.app.name_first')) !!}
@@ -26,7 +26,7 @@
 					</div>
 
 
-					@if ($user->canChangeEmail())
+					@if ($logged_in_user->canChangeEmail())
 					<div class="form-group">
 						{!! Form::label('email', trans('validation.attributes.app.email')) !!}
 						{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.app.email')]) !!}
@@ -59,7 +59,7 @@
 					@endif
 
 					<div class="form-group">
-						{!! Form::submit(trans('labels.general.buttons.save'), ['class' => 'btn btn-primary']) !!}
+						{{ Form::submit(trans('labels.general.buttons.update'), ['class' => 'btn btn-primary']) }}
 					</div>
 
 				{!! Form::close() !!}
@@ -77,7 +77,7 @@
 					@endforeach
 
 					<div class="form-group">
-						{!! Form::submit(trans('labels.general.buttons.save'), ['class' => 'btn btn-primary']) !!}
+						{{ Form::submit(trans('labels.general.buttons.update'), ['class' => 'btn btn-primary']) }}
 					</div>
 
 					{!! Form::close() !!}

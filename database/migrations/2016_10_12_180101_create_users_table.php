@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -19,10 +20,9 @@ class CreateUsersTable extends Migration
 			$table->string('name_last');
 			$table->string('name_slug')->unique();
 			$table->string('email')->unique();
-			$table->string('email_token')->nullable();
 			$table->string('password')->nullable();
-			$table->boolean('verified_email')->default(false);
-			$table->boolean('verified_human')->default(false);
+			$table->string('confirmation_code');
+			$table->boolean('confirmed')->default(config('actor.users.confirm_email') ? false : true);
 			$table->string('language')->nullable();
 			$table->string('timezone')->default('UTC');
 			$table->rememberToken();
@@ -38,6 +38,6 @@ class CreateUsersTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('users');
+		Schema::dropIfExists('users');
 	}
 }

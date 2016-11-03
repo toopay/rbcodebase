@@ -2,70 +2,124 @@
 
 namespace App\Http\Controllers\Actor\User\Auth;
 
-use Auth;
-use App\Models\Actor\User\User;
-use Socialite;
-use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Exceptions\GeneralException;
+use Laravel\Socialite\Facades\Socialite;
+use App\Events\Actor\User\UserLoggedIn;
+use App\Helpers\Actor\User\Socialite as SocialiteHelper;
+use App\Repositories\Actor\User\UserRepository;
 
+/**
+ * Class SocialLoginController
+ * @package App\Http\Controllers\Auth
+ */
 class SocialLoginController extends Controller
 {
-	public function __construct()
-	{
-		// Ensure visitor is not authenticated
-		$this->middleware(['social', 'guest']);
+	/**
+	 * @var UserRepository
+	 */
+	protected $user;
+
+	/**
+	 * @var SocialiteHelper
+	 */
+	protected $helper;
+
+	/**
+	 * SocialLoginController constructor.
+	 * @param UserRepository $user
+	 * @param SocialiteHelper $helper
+	 */
+	public function __construct(UserRepository $user, SocialiteHelper $helper) {
+		$this->user = $user;
+		$this->helper = $helper;
 	}
 
-	public function redirect($service, Request $request)
-	{
-		return Socialite::driver($service)->redirect();
-	}
+	/**
+	 * @param Request $request
+	 * @param $provider
+	 * @return \Illuminate\Http\RedirectResponse|mixed
+	 * @throws GeneralException
+	 */
+	public function login(Request $request, $provider) {
+		//If the provider is not an acceptable third party than kick back
+		if (! in_array($provider, $this->helper->getAcceptedProviders()))
+			return redirect()->route('frontend.index')->withFlashDanger(trans('auth.socialite.unacceptable', ['provider' => $provider]));
 
-	public function callback($service, Request $request)
-	{
-		$serviceUser = Socialite::driver($service)->user();
-
-		// Check if there is an existing user
-		$user = $this->getExistingUser($serviceUser, $service);
-
-		// If no user exists, create user
-		if (!$user) {
-			$user = User::create([
-				'name_first' => $serviceUser->getName(), // @TODO: REFACTOR JUST FIRST NAME
-				'name_last' => $serviceUser->getName(), // @TODO: REFACTOR JUST LAST NAME
-				'name_slug' => (!empty($serviceUser->getNickname()) ? $serviceUser->getNickname() : str_slug($serviceUser->getName())),
-				'email' => $serviceUser->getEmail(),
-			]);
+		/**
+		 * The first time this is hit, request is empty
+		 * It's redirected to the provider and then back here, where request is populated
+		 * So it then continues creating the user
+		 */
+		if (! $request->all()) {
+			return $this->getAuthorizationFirst($provider);
 		}
 
-		// Create social meta
-		if ($this->needsToCreateSocial($user, $service)) {
-			$user->social()->create([
-				'service' => $service,
-				'social_id' => $serviceUser->getId(),
-				'social_user' => $serviceUser->getNickname(),
-				'avatar' => $serviceUser->getAvatar(),
-				'token' => $serviceUser->token,
-			]);
+		/**
+		 * Create the user if this is a new social account or find the one that is already there
+		 */
+		$user = $this->user->findOrCreateSocial($this->getSocialUser($provider), $provider);
+
+		/**
+		 * User has been successfully created or already exists
+		 * Log the user in
+		 */
+		auth()->login($user, true);
+
+		/**
+		 * User authenticated, check to see if they are active.
+		 */
+		if (! access()->user()->isActive()) {
+			access()->logout();
+			throw new GeneralException(trans('exceptions.actor.user.auth.deactivated'));
 		}
 
-		// Log in user (false, do not remember)
-		Auth::login($user, false);
+		/**
+		 * Throw an event in case you want to do anything when the user logs in
+		 */
+		event(new UserLoggedIn($user));
 
-		// Redirect to intended URL
-		return redirect()->intended();
+		/**
+		 * Set session variable so we know which provider user is logged in as, if ever needed
+		 */
+		session([config('actor.socialite_session_name') => $provider]);
+
+		/**
+		 * Return to the intended url or default to the class property
+		 */
+		return redirect()->intended(route('frontend.index'));
 	}
 
-	protected function needsToCreateSocial(User $user, $service)
+	/**
+	 * @param  $provider
+	 * @return mixed
+	 */
+	private function getAuthorizationFirst($provider)
 	{
-		return !$user->hasSocialLinked($service);
+		$socialite = Socialite::driver($provider);
+		$scopes = count(config("services.{$provider}.scopes")) ? config("services.{$provider}.scopes") : false;
+		$with = count(config("services.{$provider}.with")) ? config("services.{$provider}.with") : false;
+		$fields = count(config("services.{$provider}.fields")) ? config("services.{$provider}.fields") : false;
+
+		if ($scopes)
+			$socialite->scopes($scopes);
+
+		if ($with)
+			$socialite->with($with);
+
+		if ($fields)
+			$socialite->fields($fields);
+
+		return $socialite->redirect();
 	}
 
-	protected function getExistingUser($serviceUser, $service)
+	/**
+	 * @param $provider
+	 * @return mixed
+	 */
+	private function getSocialUser($provider)
 	{
-		return User::where('email', $serviceUser->getEmail())->orWhereHas('social', function ($q) use ($serviceUser, $service) {
-			$q->where('social_id', $serviceUser->getId())->where('service', $service);
-		})->first();
+		return Socialite::driver($provider)->user();
 	}
 }

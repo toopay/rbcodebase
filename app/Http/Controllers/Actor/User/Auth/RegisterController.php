@@ -2,94 +2,76 @@
 
 namespace App\Http\Controllers\Actor\User\Auth;
 
-use App\Models\Actor\User\User;
 use App\Http\Controllers\Controller;
-
 use App\Events\Actor\User\UserRegistered;
-use App\Repositories\Actor\User\UserRepositoryContract;
-
-use Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
+use App\Http\Requests\Actor\User\RegisterRequest;
+use App\Repositories\Actor\User\UserRepository;
 
+/**
+ * Class RegisterController
+ * @package App\Http\Controllers\Actor\User
+ */
 class RegisterController extends Controller
 {
-	/*
-	|--------------------------------------------------------------------------
-	| Register Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller handles the registration of new users as well as their
-	| validation and creation. By default this controller uses a trait to
-	| provide this functionality without requiring any additional code.
-	|
-	*/
-
 	use RegistersUsers;
 
 	/**
-	 * Where to redirect users after login / registration.
-	 *
-	 * @var string
+	 * @var UserRepository
 	 */
-	protected $redirectTo = route('app.index');
+	protected $user;
 
 	/**
-	 * @var UserRepositoryContract
+	 * RegisterController constructor.
+	 * @param UserRepository $user
 	 */
-	private $userRepository;
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct(UserRepositoryContract $userRepository)
+	public function __construct(UserRepository $user)
 	{
-		$this->userRepository = $userRepository;
+		// Where to redirect users after registering
+		$this->redirectTo = route('app.index');
 
-		$this->middleware('guest');
+		$this->user = $user;
 	}
 
 	/**
-	 * Get a validator for an incoming registration request.
+	 * Show the application registration form.
 	 *
-	 * @param  array  $data
-	 * @return \Illuminate\Contracts\Validation\Validator
+	 * @return \Illuminate\Http\Response
 	 */
-	protected function validator(array $data)
+	public function showRegistrationForm()
 	{
-		return Validator::make($data, [
-			'name_first' => 'required|max:255',
-			'name_last'  => 'required|max:255',
-			'name_slug'  => 'required|max:255|unique:users',
-			'email'      => 'required|email|max:255|unique:users',
-			'password'   => 'required|min:6|confirmed',
-		]);
+		return view('actor.user.auth.register');
 	}
 
 	/**
-	 * Create a new user instance after a valid registration.
-	 *
-	 * @param  array  $data
-	 * @return User
+	 * @param RegisterRequest $request
+	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
 	 */
-	protected function create(array $data)
+	public function register(RegisterRequest $request)
 	{
-		$user = $this->userRepository->create($data);
+		if (config('actor.users.confirm_email')) {
+			$user = $this->user->create($request->all());
 
-		if (isset($data['types'])) {
-			$user->updateTypes($data['types']);
+			// Add User Types
+			if (isset($data['types'])) {
+				$user->updateTypes($data['types']);
+			}
+
+			// Trigger Event
+			event(new UserRegistered($user));
+			return redirect($this->redirectPath())->withFlashSuccess(trans('exceptions.app.auth.confirmation.created_confirm')); // @TODO: FIND
+		} else {
+			auth()->login($this->user->create($request->all()));
+
+			// Add User Types
+			if (isset($data['types'])) {
+				$user->updateTypes($data['types']);
+			}
+
+			// Trigger Event
+			event(new UserRegistered(access()->user()));
+			return redirect($this->redirectPath());
 		}
-
-		event(new UserRegistered($user));
-
-		if (config('access.users.confirm_email')) {
-			return redirect()->route('app.index')->withFlashSuccess(trans('exceptions.app.auth.confirmation.created_confirm'));
-		}
-
-		auth()->login($user);
-
-		return redirect($this->redirectPath());
 	}
+
 }

@@ -54,7 +54,7 @@ class Handler extends ExceptionHandler
 		 * Usually because user stayed on the same screen too long and their session expired
 		 */
 		if ($exception instanceof TokenMismatchException) {
-			return redirect()->route('frontend.auth.login');
+			return redirect()->route('actor.user.auth.login');
 		}
 
 		/**

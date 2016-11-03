@@ -77,7 +77,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => env('APP_LOCALE', 'en'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -90,7 +90,18 @@ return [
 	|
 	*/
 
-	'fallback_locale' => 'en',
+	'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+
+	/*
+	|--------------------------------------------------------------------------
+	| PHP Locale Code
+	|--------------------------------------------------------------------------
+	|
+	| The PHP locale determines the default locale that will be used
+	| by the Carbon library when setting Carbon's localization.
+	|
+	*/
+	'locale_php' => env('APP_LOCALE_PHP', 'en_US'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -120,7 +131,7 @@ return [
 	|
 	*/
 
-	'log' => env('APP_LOG', 'single'),
+	'log' => env('APP_LOG', 'daily'),
 
 	'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
@@ -166,32 +177,36 @@ return [
 		/*
 		 * Package Service Providers...
 		 */
-
+		Arcanedev\LogViewer\LogViewerServiceProvider::class,
+		Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
+		Collective\Html\HtmlServiceProvider::class,
+		Creativeorange\Gravatar\GravatarServiceProvider::class,
+		HieuLe\Active\ActiveServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
+		Yajra\Datatables\DatatablesServiceProvider::class,
+		Watson\Sitemap\SitemapServiceProvider::class,
+		Collective\Html\HtmlServiceProvider::class,
+		Dimsav\Translatable\TranslatableServiceProvider::class,
 		Laravel\Cashier\CashierServiceProvider::class,
+
+		/*
+		 * Has to override the Collective\Html\HtmlServiceProvider form singleton
+		 */
+		App\Providers\MacroServiceProvider::class,
 
 		/*
 		 * Application Service Providers...
 		 */
+		App\Providers\Actor\User\AccessServiceProvider::class,
 		App\Providers\AppServiceProvider::class,
 		App\Providers\Actor\User\AuthServiceProvider::class,
-		// App\Providers\BroadcastServiceProvider::class,
+		App\Providers\BladeServiceProvider::class,
+		//App\Providers\BroadcastServiceProvider::class,
+		App\Providers\ComposerServiceProvider::class,
 		App\Providers\EventServiceProvider::class,
+		App\Providers\HistoryServiceProvider::class,
 		App\Providers\RouteServiceProvider::class,
-		App\Providers\Actor\User\SocialServiceProvider::class,
 
-		/*
-		 * Third Party Providers
-		 */
-		Watson\Sitemap\SitemapServiceProvider::class,
-		Collective\Html\HtmlServiceProvider::class,
-		Dimsav\Translatable\TranslatableServiceProvider::class,
-		//Arcanedev\LogViewer\LogViewerServiceProvider::class,
-		//Creativeorange\Gravatar\GravatarServiceProvider::class,
-		//Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-		//HieuLe\Active\ActiveServiceProvider::class,
-		//Spatie\Backup\BackupServiceProvider::class,
-		//Cohensive\Embed\EmbedServiceProvider::class,
 	],
 
 	/*
@@ -220,10 +235,8 @@ return [
 		'Eloquent' => Illuminate\Database\Eloquent\Model::class,
 		'Event' => Illuminate\Support\Facades\Event::class,
 		'File' => Illuminate\Support\Facades\File::class,
-		'Form' => Collective\Html\FormFacade::class,
 		'Gate' => Illuminate\Support\Facades\Gate::class,
 		'Hash' => Illuminate\Support\Facades\Hash::class,
-		'Html' => Collective\Html\HtmlFacade::class,
 		'Lang' => Illuminate\Support\Facades\Lang::class,
 		'Log' => Illuminate\Support\Facades\Log::class,
 		'Mail' => Illuminate\Support\Facades\Mail::class,
@@ -246,11 +259,16 @@ return [
 		/*
 		 * Third Party Aliases
 		 */
+		'Active' => HieuLe\Active\Facades\Active::class,
 		'Breadcrumbs'=> App\Repositories\Common\Breadcrumbs::class,
+		'Captcha'     => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
 		'Debugbar' => Barryvdh\Debugbar\Facade::class,
+		'Form' => Collective\Html\FormFacade::class,
+		'Gravatar'    => Creativeorange\Gravatar\Facades\Gravatar::class,
+		'Html' => Collective\Html\HtmlFacade::class,
 		'SEO' => App\Repositories\Common\SEO\Facades\SEOTools::class,
 		'Sitemap' => Watson\Sitemap\Facades\Sitemap::class,
-		'Socialite' => Laravel\Socialite\Facades\Socialite::class
+		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 	],
 
 ];

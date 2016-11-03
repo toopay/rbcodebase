@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Actor\User\Profile;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Actor\User\UpdateProfileRequest;
+use App\Http\Requests\Frontend\User\UpdateProfileRequest;
+use App\Repositories\Actor\User\UserRepository;
 use App\Models\Actor\User\User;
 use App\Models\Actor\User\UserField;
 use App\Models\Actor\User\UserMeta;
 use App\Models\Actor\User\UserType;
-use App\Repositories\Actor\User\UserRepositoryContract;
 
 use App\Repositories\Common\Breadcrumbs;
 use SEO;
@@ -20,10 +20,20 @@ use Illuminate\Http\Request;
  */
 class ProfileController extends Controller
 {
-	public function __construct()
-	{
-		// Set Base Breadcrumb
+	/**
+	 * @var UserRepository
+	 */
+	protected $user;
 
+	/**
+	 * ProfileController constructor.
+	 * @param UserRepository $user
+	 */
+	public function __construct(UserRepository $user) {
+	{
+		$this->user = $user;
+
+		// Set Base Breadcrumb
 		Breadcrumbs::push('<i class="fa fa-home"></i>', route('marketing.index'));
 	}
 
@@ -85,8 +95,9 @@ class ProfileController extends Controller
 	 */
 	public function update(UserRepositoryContract $user, UpdateProfileRequest $request)
 	{
-		$user->updateProfile(access()->id(), $request->all());
+		$this->user->updateProfile(access()->id(), $request->all());
 
+		// Custom Types
 		access()->user()->updateTypes($request->types);
 
 		return redirect()->route('actor.user.profile')->withFlashSuccess(trans('strings.app.user.profile_updated'));
@@ -104,6 +115,7 @@ class ProfileController extends Controller
 		// Get User Information
 		$user = User::select('id', 'name_first', 'name_last', 'name_slug', 'status', 'timezone', 'language', 'created_at', 'updated_at')->where('name_slug', $name_slug)->firstorFail();
 
+		// Meta
 		SEO::opengraph()->setTitle($user->name_first .' '. $user->name_last)
 					->setDescription($user->name_first .' '. $user->name_last .' is a member of the Hiekr.Com/munity')
 					->setType('profile')

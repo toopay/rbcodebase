@@ -12,14 +12,32 @@ class EventServiceProvider extends ServiceProvider
 	 *
 	 * @var array
 	 */
-	protected $listen = [
-		'App\Events\Actor\User\AuthGitHubAccountWasLinked' => [
-			'App\Listeners\Actor\User\AuthSendGitHubLinkedEmail',
-		],
-		'App\Events\Actor\User\AuthTwitterAccountWasLinked' => [
-			'App\Listeners\Actor\User\AuthSendTwitterLinkedEmail',
-		],
-	];
+	 protected $listen = [];
+
+	 /**
+	  * Class event subscribers
+	  * @var array
+	  */
+	 protected $subscribe = [
+		 /**
+		  * Frontend Subscribers
+		  */
+
+		 /**
+		  * Auth Subscribers
+		  */
+		 \App\Listeners\Actor\User\UserEventListener::class,
+
+		 /**
+		  * Backend Subscribers
+		  */
+
+		 /**
+		  * Access Subscribers
+		  */
+		 \App\Listeners\Backend\Actor\User\UserEventListener::class,
+		 \App\Listeners\Admin\Actor\User\RoleEventListener::class,
+	 ];
 
 	/**
 	 * Register any events for your application.

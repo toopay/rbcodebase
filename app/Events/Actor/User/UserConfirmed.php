@@ -7,7 +7,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class UserConfirmed
- * @package App\Events\Frontend\Auth
+ * @package App\Events\Actor\User
  */
 class UserConfirmed extends Event
 {

@@ -1,8 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Class DatabaseSeeder
+ */
 class DatabaseSeeder extends Seeder
 {
 	/**
@@ -12,12 +16,15 @@ class DatabaseSeeder extends Seeder
 	 */
 	public function run()
 	{
+		Model::unguard();
+
 		// Actors
 		$this->command->info('SEEDER GROUP: Actors');
 		$this->call(ActorTableSeeder::class);
 
 		// Common
-		//$this->command->info('SEEDER GROUP: Common');
+		$this->command->info('SEEDER GROUP: Common');
+		$this->call(HistoryTypeTableSeeder::class);
 
 		// App Group
 		//$this->command->info('SEEDER GROUP: Apps');
@@ -25,5 +32,8 @@ class DatabaseSeeder extends Seeder
 
 		// Completed
 		$this->command->info('ALL DONE!');
+
+		Model::reguard();
+
 	}
 }

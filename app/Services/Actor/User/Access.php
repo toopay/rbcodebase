@@ -4,13 +4,10 @@ namespace App\Services\Actor\User;
 
 /**
  * Class Access
- * @package App\Services\Actor\User
+ * @package App\Services\Access
  */
 class Access
 {
-	const ACTIVE_PROFILE = 'active_profile';
-	const FAILED_INTAKE = 'failed_intake';
-
 	/**
 	 * Laravel application
 	 *
@@ -37,31 +34,20 @@ class Access
 	}
 
 	/**
-	 * Set the active profile
+	 * Return if the current session user is a guest or not
+	 * @return mixed
 	 */
-	public function setActiveProfile($id)
+	public function guest()
 	{
-		session()->put(self::ACTIVE_PROFILE, $id);
+		return auth()->guest();
 	}
 
 	/**
-	 * Get the currently active profile or null
+	 * @return mixed
 	 */
-	public function profile()
+	public function logout()
 	{
-		if (!auth()->user()) {
-			return;
-		}
-
-		return auth()->user()->brands->find(session()->get(self::ACTIVE_PROFILE, '0'), auth()->user());
-	}
-
-	/**
-	 * Get all profiles
-	 */
-	public function profiles()
-	{
-		return collect([auth()->user()])->merge(auth()->user()->brands);
+		return auth()->logout();
 	}
 
 	/**
@@ -74,43 +60,11 @@ class Access
 	}
 
 	/**
-	 * Save failed intake into session
-	 */
-	public function saveFailedIntake($data)
-	{
-		session()->put(self::FAILED_INTAKE, $data);
-	}
-
-	/**
-	 * Get failed intake from session or null
+	 * @param $id
 	 * @return mixed
 	 */
-	public function getFailedIntake()
-	{
-		return session()->get(self::FAILED_INTAKE);
-	}
-
-	/**
-	 * Clear failed intake
-	 */
-	public function flushFailedIntake()
-	{
-		session()->forget(self::FAILED_INTAKE);
-	}
-
-	/**
-	 * Check if the current user has a sufficient plan
-	 *
-	 * @return bool
-	 */
-	public function hasSufficientPlan()
-	{
-		if ($this->user() && $this->user()->subscribed('main')) {
-			return $this->user()->subscription('main')->stripe_plan == 'enterprise'
-				|| $this->user()->brands->count() < 5;
-		}
-
-		return false;
+	public function loginUsingId($id) {
+		return auth()->loginUsingId($id);
 	}
 
 	/**
@@ -139,7 +93,7 @@ class Access
 		if ($user = $this->user()) {
 			//If not an array, make a one item array
 			if (!is_array($roles)) {
-				$roles = [$roles];
+				$roles = array($roles);
 			}
 
 			return $user->hasRoles($roles, $needsAll);
@@ -174,7 +128,7 @@ class Access
 		if ($user = $this->user()) {
 			//If not an array, make a one item array
 			if (!is_array($permissions)) {
-				$permissions = [$permissions];
+				$permissions = array($permissions);
 			}
 
 			return $user->allowMultiple($permissions, $needsAll);

@@ -18,6 +18,7 @@ class LanguageController extends Controller
 	{
 		session()->put('locale', $lang);
 
+		// Duplicate
 		\App::setLocale($lang);
 
 		// If user is logged set current language to match dropdown.

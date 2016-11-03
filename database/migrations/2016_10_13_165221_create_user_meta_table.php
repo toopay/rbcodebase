@@ -66,10 +66,10 @@ class CreateUserMetaTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('user_type_mux');
-		Schema::drop('user_field_type');
-		Schema::drop('user_meta');
-		Schema::drop('data_user_fields');
-		Schema::drop('data_user_types');
+		Schema::dropIfExists('user_type_mux');
+		Schema::dropIfExists('user_field_type');
+		Schema::dropIfExists('user_meta');
+		Schema::dropIfExists('data_user_fields');
+		Schema::dropIfExists('data_user_types');
 	}
 }

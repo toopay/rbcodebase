@@ -2,13 +2,14 @@
 
 namespace App\Http\Requests\Actor\User\Auth;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Request;
+use Illuminate\Validation\Rule;
 
 /**
  * Class RegisterRequest
- * @package App\Http\Requests\App\Access
+ * @package App\Http\Requests\Frontend\Access
  */
-class RegisterRequest extends FormRequest
+class RegisterRequest extends Request
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -28,11 +29,21 @@ class RegisterRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'name_first' => 'required|max:255',
-			'name_last'  => 'required|max:255',
-			'name_slug'  => 'required|max:255|unique:users',
-			'email'      => 'required|email|max:255|unique:users',
-			'password'   => 'required|min:6|confirmed',
+			'name_first' => 'required',
+			'name_last' => 'required',
+			'name_slug' => 'min:3|max:20|unique:users',
+			'email' => ['required', 'email', 'max:255', Rule::unique('users')],
+			'password' => 'required|min:6|confirmed',
+			'g-recaptcha-response' => 'required_if:captcha_status,true|captcha',
+		];
+	}
+
+	/**
+	 * @return array
+	 */
+	public function messages() {
+		return [
+			'g-recaptcha-response.required_if' => trans('validation.required', ['attribute' => 'captcha']),
 		];
 	}
 }

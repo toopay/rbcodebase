@@ -5,16 +5,15 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
+				<div class="panel-heading">{{ trans('labels.frontend.passwords.reset_password_box_title') }}</div>
 
 				<div class="panel-body">
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
-						{{ csrf_field() }}
+					{{ Form::open(['route' => 'actor.user.auth.password.reset', 'class' => 'form-horizontal']) }}
 
 						<input type="hidden" name="token" value="{{ $token }}">
 
 						<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-							<label for="email" class="col-md-4 control-label">E-Mail Address</label>
+							{{ Form::label('email', trans('validation.attributes.frontend.email'), ['class' => 'col-md-4 control-label']) }}
 
 							<div class="col-md-6">
 								<input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
@@ -28,10 +27,9 @@
 						</div>
 
 						<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-							<label for="password" class="col-md-4 control-label">Password</label>
-
+							{{ Form::label('password', trans('validation.attributes.frontend.password'), ['class' => 'col-md-4 control-label']) }}
 							<div class="col-md-6">
-								<input id="password" type="password" class="form-control" name="password" required>
+								{{ Form::input('password', 'password', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.password')]) }}
 
 								@if ($errors->has('password'))
 									<span class="help-block">
@@ -42,9 +40,9 @@
 						</div>
 
 						<div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-							<label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+							{{ Form::label('password_confirmation', trans('validation.attributes.frontend.password_confirmation'), ['class' => 'col-md-4 control-label']) }}
 							<div class="col-md-6">
-								<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+								{{ Form::input('password', 'password_confirmation', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.password_confirmation')]) }}
 
 								@if ($errors->has('password_confirmation'))
 									<span class="help-block">
@@ -56,12 +54,10 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Reset Password
-								</button>
+								{{ Form::submit(trans('labels.frontend.passwords.reset_password_button'), ['class' => 'btn btn-primary']) }}
 							</div>
 						</div>
-					</form>
+					{{ Form::close() }}
 				</div>
 			</div>
 		</div>

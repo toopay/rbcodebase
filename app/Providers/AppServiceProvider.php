@@ -5,6 +5,10 @@ namespace App\Providers;
 use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class AppServiceProvider
+ * @package App\Providers
+ */
 class AppServiceProvider extends ServiceProvider
 {
 	/**
@@ -29,6 +33,21 @@ class AppServiceProvider extends ServiceProvider
 		 * setLocale to use Carbon source locales. Enables diffForHumans() localized
 		 */
 		Carbon::setLocale(config('app.locale'));
+
+		/**
+		 * Set the session variable for whether or not the app is using RTL support
+		 * For use in the blade directive in BladeServiceProvider
+		 */
+		if (config('locale.languages')[config('app.locale')][2]) {
+			session(['lang-rtl' => true]);
+		} else {
+			session()->forget('lang-rtl');
+		}
+
+		// Force SSL in production
+		if ($this->app->environment() == 'production') {
+			//URL::forceSchema('https');
+		}
 	}
 
 	/**
@@ -52,13 +71,6 @@ class AppServiceProvider extends ServiceProvider
 			 */
 			$this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
 			$loader->alias('Debugbar', \Barryvdh\Debugbar\Facade::class);
-			//$this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
 		}
-
-		/*
-		 * Sets third party service providers that are only needed on both local and production environments
-		 */
-
-			$this->app->register(Common\SEOToolsServiceProvider::class);
 	}
 }

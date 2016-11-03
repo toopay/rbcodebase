@@ -1,32 +1,55 @@
 <?php
 
-namespace App\Http\Controllers\Actor\User\Auth;
+namespace App\Http\Controllers\Actor\User;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use App\Repositories\Actor\User\UserRepository;
 
+/**
+ * Class ResetPasswordController
+ * @package App\Http\Controllers\Actor\User
+ */
 class ResetPasswordController extends Controller
 {
-	/*
-	|--------------------------------------------------------------------------
-	| Password Reset Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller is responsible for handling password reset requests
-	| and uses a simple trait to include this behavior. You're free to
-	| explore this trait and override any methods you wish to tweak.
-	|
-	*/
-
 	use ResetsPasswords;
 
 	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
+	 * @var UserRepository
 	 */
-	public function __construct()
+	protected $user;
+
+	/**
+	 * ChangePasswordController constructor.
+	 * @param UserRepository $user
+	 */
+	public function __construct(UserRepository $user)
 	{
-		$this->middleware('guest');
+		$this->user = $user;
+	}
+
+	/**
+	 * Where to redirect users after resetting password
+	 *
+	 * @return string
+	 */
+	public function redirectPath() {
+		return route('marketing.index');
+	}
+
+	/**
+	 * Display the password reset view for the given token.
+	 *
+	 * If no token is present, display the link request form.
+	 *
+	 * @param  string|null  $token
+	 * @return \Illuminate\Http\Response
+	 */
+	public function showResetForm($token = null)
+	{
+		return view('actor.user.auth.passwordreset')
+			->withToken($token)
+			->withEmail($this->user->getEmailForPasswordToken($token));
 	}
 }

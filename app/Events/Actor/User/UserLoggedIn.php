@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Events\Frontend\Auth;
+namespace App\Events\Actor\User;
 
 use App\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
 /**
  * Class UserLoggedIn
- * @package App\Events\Frontend\Auth
+ * @package App\Events\Actor\User
  */
 class UserLoggedIn extends Event
 {

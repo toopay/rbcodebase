@@ -12,13 +12,13 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<a class="media-left media-middle">
-							<img class="media-object img-circle h-100 w-100" alt="{!! $user->name_first !!} {!! $user->name_last !!}" src="{!! $user->picture !!}" />
+							<img class="media-object img-circle h-100 w-100" alt="{!! $user->name_first !!} {!! $user->name_last !!}" src="{{ $logged_in_user->picture }}" />
 						</a>
 						<div class="media-body">
 							<div class="p-10 m-t-5">
 								<h5 class="text-bold color-white">{!! $user->name_first !!} {!! $user->name_last !!}</h5>
 								<p class="m-b-0">
-									<i class="fa fa-map-marker color-white"></i> <span class="color-white">Created {!! $user->created_at->diffForHumans() !!}.  Updated {!! $user->updated_at->diffForHumans() !!}</span>
+									<i class="fa fa-map-marker color-white"></i> <span class="color-white">{{ trans('labels.frontend.user.profile.created_at') }} {!! $user->created_at->diffForHumans() !!}.  {{ trans('labels.frontend.user.profile.last_updated') }} {!! $user->updated_at->diffForHumans() !!}</span>
 								</p>
 							</div>
 							<div class="p-10 p-t-15">

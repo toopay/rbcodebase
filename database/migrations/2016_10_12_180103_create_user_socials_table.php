@@ -13,14 +13,14 @@ class CreateUserSocialsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('users_socials', function (Blueprint $table) {
-			$table->increments('id');
+		Schema::create('users_logins', function (Blueprint $table) {
+			$table->increments('id')->unsigned();
 			$table->integer('user_id')->unsigned();
-			$table->string('service', 32);
+			$table->string('provider', 32);
+			$table->string('provider_id');
 			$table->string('token')->nullable();
-			$table->string('social_id');
-			$table->string('social_user')->nullable();
 			$table->string('avatar')->nullable();
+			$table->string('username')->nullable();
 			$table->timestamps();
 
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -34,6 +34,6 @@ class CreateUserSocialsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('user_socials');
+		Schema::dropIfExists('users_logins');
 	}
 }

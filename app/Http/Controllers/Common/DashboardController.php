@@ -36,4 +36,13 @@ class DashboardController extends Controller
 		// Return View
 		return view('common.dashboard');
 	}
+
+	/**
+	 * @return \Illuminate\View\View
+	 */
+	public function macros()
+	{
+		return view('frontend.macros');
+	}
+
 }

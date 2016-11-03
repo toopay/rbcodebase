@@ -2,6 +2,8 @@
 
 return [
 
+	// @TODO: Merge with Locale
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Locales
