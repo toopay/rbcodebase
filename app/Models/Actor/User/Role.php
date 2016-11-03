@@ -10,7 +10,7 @@ use App\Models\Actor\User\Traits\Relationship\RoleRelationship;
 
 /**
  * Class Role
- * @package App\Models\Access\Role
+ * @package App\Models\Actor\User
  */
 class Role extends Model
 {

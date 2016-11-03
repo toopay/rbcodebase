@@ -31,7 +31,7 @@ Route::group(['namespace' => 'User'], function () {
 			// Auth
 			Route::group(['middleware' => 'auth', 'namespace' => 'Auth'], function () {
 				// Logout
-				Route::get('logout', 'AuthController@logout')->name('actor.user.auth.logout');
+				Route::get('logout', 'LoginController@logout')->name('actor.user.auth.logout');
 
 				// Change Password Routes
 				Route::get('password', 'PasswordController@showChangePasswordForm')->name('actor.user.profile.password.change');
@@ -80,8 +80,8 @@ Route::group(['namespace' => 'User'], function () {
 //		Route::group(['prefix' => 'profile'], function() {
 
 			// Confirm Account Routes
-	//		Route::get('account/confirm/{token}', 'AuthController@confirmAccount')->name('actor.user.auth.confirm');
-	//		Route::get('account/confirm/resend/{user_id}', 'AuthController@resendConfirmationEmail')->name('actor.user.auth.confirm.resend');
+	//		Route::get('account/confirm/{token}', 'LoginController@confirmAccount')->name('actor.user.auth.confirm');
+	//		Route::get('account/confirm/resend/{user_id}', 'LoginController@resendConfirmationEmail')->name('actor.user.auth.confirm.resend');
 
 			// Password Reset Routes
 	//		Route::get('password/reset/{token?}', 'PasswordController@showResetForm')->name('actor.user.auth.password.reset');
