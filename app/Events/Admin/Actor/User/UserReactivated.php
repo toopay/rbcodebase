@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Events\Admin\Access\User;
+namespace App\Events\Admin\Actor\User;
 
 use App\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
 /**
  * Class UserReactivated
- * @package App\Events\Admin\Access\User
+ * @package App\Events\Admin\Actor\User
  */
 class UserReactivated extends Event
 {

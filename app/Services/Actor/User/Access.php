@@ -4,7 +4,7 @@ namespace App\Services\Actor\User;
 
 /**
  * Class Access
- * @package App\Services\Access
+ * @package App\Services\Actor\User
  */
 class Access
 {

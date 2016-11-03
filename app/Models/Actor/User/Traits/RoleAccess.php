@@ -4,7 +4,7 @@ namespace App\Models\Actor\User\Traits;
 
 /**
  * Class RoleAccess
- * @package App\Models\Access\Role\Traits
+ * @package App\Models\Actor\User\Traits
  */
 trait RoleAccess
 {

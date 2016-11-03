@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 
 /**
  * Class RegisterRequest
- * @package App\Http\Requests\Frontend\Access
+ * @package App\Http\Requests\Actor\User\Auth
  */
 class RegisterRequest extends Request
 {

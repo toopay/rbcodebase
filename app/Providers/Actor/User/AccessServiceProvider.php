@@ -2,7 +2,7 @@
 
 namespace App\Providers\Actor\User;
 
-use App\Services\Access\Access;
+use App\Services\Actor\User\Access;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 

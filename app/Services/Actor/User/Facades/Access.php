@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Access
- * @package App\Services\Access\Facades
+ * @package App\Services\Actor\User\Facades
  */
 class Access extends Facade
 {
