@@ -177,17 +177,16 @@ return [
 		/*
 		 * Package Service Providers...
 		 */
-		Arcanedev\LogViewer\LogViewerServiceProvider::class,
 		Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
 		Creativeorange\Gravatar\GravatarServiceProvider::class,
+		DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
 		HieuLe\Active\ActiveServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
 		Yajra\Datatables\DatatablesServiceProvider::class,
 		Watson\Sitemap\SitemapServiceProvider::class,
-		Collective\Html\HtmlServiceProvider::class,
 		Dimsav\Translatable\TranslatableServiceProvider::class,
-		Laravel\Cashier\CashierServiceProvider::class,
+		//Laravel\Cashier\CashierServiceProvider::class,
 
 		/*
 		 * Has to override the Collective\Html\HtmlServiceProvider form singleton
@@ -197,9 +196,9 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		App\Providers\Actor\User\AccessServiceProvider::class,
+		App\Providers\AccessServiceProvider::class,
 		App\Providers\AppServiceProvider::class,
-		App\Providers\Actor\User\AuthServiceProvider::class,
+		App\Providers\AuthServiceProvider::class,
 		App\Providers\BladeServiceProvider::class,
 		//App\Providers\BroadcastServiceProvider::class,
 		App\Providers\ComposerServiceProvider::class,
@@ -221,12 +220,10 @@ return [
 	*/
 
 	'aliases' => [
-
 		'App' => Illuminate\Support\Facades\App::class,
 		'Artisan' => Illuminate\Support\Facades\Artisan::class,
 		'Auth' => Illuminate\Support\Facades\Auth::class,
 		'Blade' => Illuminate\Support\Facades\Blade::class,
-		'Bus' => Illuminate\Support\Facades\Bus::class,
 		'Cache' => Illuminate\Support\Facades\Cache::class,
 		'Config' => Illuminate\Support\Facades\Config::class,
 		'Cookie' => Illuminate\Support\Facades\Cookie::class,
@@ -254,7 +251,6 @@ return [
 		'URL' => Illuminate\Support\Facades\URL::class,
 		'Validator' => Illuminate\Support\Facades\Validator::class,
 		'View' => Illuminate\Support\Facades\View::class,
-		//'Str' => Illuminate\Support\Str::class
 
 		/*
 		 * Third Party Aliases
@@ -269,6 +265,7 @@ return [
 		'SEO' => App\Repositories\Common\SEO\Facades\SEOTools::class,
 		'Sitemap' => Watson\Sitemap\Facades\Sitemap::class,
 		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 	],
 
 ];

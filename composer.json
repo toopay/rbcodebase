@@ -10,11 +10,14 @@
 		"laravelcollective/html": "^5.3",
 		"laracasts/utilities": "~2.0",
 		"laravel/socialite": "^2.0",
-		"laravel/cashier": "~7.0",
 		"dimsav/laravel-translatable": "6.*",
 		"watson/sitemap": " 2.0.*",
-		"dompdf/dompdf": "0.6.1",
-		"guzzlehttp/guzzle": "^6.2"
+		"creativeorange/gravatar": "~1.0",
+		"davejamesmiller/laravel-breadcrumbs": "^3.0",
+		"hieu-le/active": "~2.0",
+		"arcanedev/log-viewer": "~4.0",
+		"arcanedev/no-captcha": "~3.0",
+		"yajra/laravel-datatables-oracle": "~6.0"
 	},
 	"require-dev": {
 		"fzaninotto/faker": "~1.4",

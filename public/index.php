@@ -47,14 +47,6 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
-try {
-	$app->run();
-} catch(\Exception $e) {
-	echo "<pre>";
-	echo $e;
-	echo "</pre>";
-}
-
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
