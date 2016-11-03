@@ -6,7 +6,7 @@ use App\Http\Requests\Request;
 
 /**
  * Class ManageUserRequest
- * @package App\Http\Requests\Backend\Actor\User
+ * @package App\Http\Requests\Admin\Actor\User
  */
 class ManageUserRequest extends Request
 {

@@ -1,11 +1,13 @@
-<?php namespace App\Repositories\Admin\Common\History;
+<?php
 
-use App\Models\History\History;
-use App\Models\History\HistoryType;
+namespace App\Repositories\Admin\Common\History;
+
+use App\Models\Common\History\History;
+use App\Models\Common\History\HistoryType;
 
 /**
  * Class EloquentHistoryRepository
- * @package App\Repositories\Backend\History
+ * @package App\Repositories\Admin\History
  */
 class EloquentHistoryRepository implements HistoryContract {
 

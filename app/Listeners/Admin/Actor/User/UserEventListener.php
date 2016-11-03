@@ -4,7 +4,7 @@ namespace App\Listeners\Admin\Actor\User;
 
 /**
  * Class UserEventListener
- * @package App\Listeners\Backend\Actor\User
+ * @package App\Listeners\Admin\Actor\User
  */
 class UserEventListener
 {
@@ -125,43 +125,43 @@ class UserEventListener
 	public function subscribe($events)
 	{
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserCreated::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onCreated'
+			\App\Events\Admin\Actor\User\UserCreated::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onCreated'
 		);
 
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserUpdated::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onUpdated'
+			\App\Events\Admin\Actor\User\UserUpdated::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onUpdated'
 		);
 
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserDeleted::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onDeleted'
+			\App\Events\Admin\Actor\User\UserDeleted::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onDeleted'
 		);
 
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserRestored::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onRestored'
+			\App\Events\Admin\Actor\User\UserRestored::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onRestored'
 		);
 
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserPermanentlyDeleted::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onPermanentlyDeleted'
+			\App\Events\Admin\Actor\User\UserPermanentlyDeleted::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onPermanentlyDeleted'
 		);
 
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserPasswordChanged::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onPasswordChanged'
+			\App\Events\Admin\Actor\User\UserPasswordChanged::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onPasswordChanged'
 		);
 
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserDeactivated::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onDeactivated'
+			\App\Events\Admin\Actor\User\UserDeactivated::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onDeactivated'
 		);
 
 		$events->listen(
-			\App\Events\Backend\Actor\User\UserReactivated::class,
-			'App\Listeners\Backend\Actor\User\UserEventListener@onReactivated'
+			\App\Events\Admin\Actor\User\UserReactivated::class,
+			'App\Listeners\Admin\Actor\User\UserEventListener@onReactivated'
 		);
 	}
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Actor\User;
 use App\Models\Actor\User\User;
 use App\Http\Controllers\Controller;
 use App\Notifications\Actor\User\UserNeedsConfirmation;
-use App\Http\Requests\Backend\Actor\User\ManageUserRequest;
+use App\Http\Requests\Admin\Actor\User\ManageUserRequest;
 
 /**
  * Class UserConfirmationController

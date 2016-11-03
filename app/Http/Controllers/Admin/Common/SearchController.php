@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 /**
  * Class SearchController
- * @package App\Http\Controllers\Backend\Search
+ * @package App\Http\Controllers\Admin\Search
  */
 class SearchController extends Controller
 {

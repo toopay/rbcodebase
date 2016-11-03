@@ -7,15 +7,15 @@ use App\Repositories\Repository;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use Illuminate\Database\Eloquent\Model;
-use App\Events\Backend\Actor\User\UserCreated;
-use App\Events\Backend\Actor\User\UserUpdated;
-use App\Events\Backend\Actor\User\UserDeleted;
-use App\Events\Backend\Actor\User\UserRestored;
-use App\Events\Backend\Actor\User\UserDeactivated;
-use App\Events\Backend\Actor\User\UserReactivated;
-use App\Events\Backend\Actor\User\UserPasswordChanged;
+use App\Events\Admin\Actor\User\UserCreated;
+use App\Events\Admin\Actor\User\UserUpdated;
+use App\Events\Admin\Actor\User\UserDeleted;
+use App\Events\Admin\Actor\User\UserRestored;
+use App\Events\Admin\Actor\User\UserDeactivated;
+use App\Events\Admin\Actor\User\UserReactivated;
+use App\Events\Admin\Actor\User\UserPasswordChanged;
+use App\Events\Admin\Actor\User\UserPermanentlyDeleted;
 use App\Repositories\Admin\Actor\User\RoleRepository;
-use App\Events\Backend\Actor\User\UserPermanentlyDeleted;
 use App\Notifications\Actor\User\UserNeedsConfirmation;
 
 /**

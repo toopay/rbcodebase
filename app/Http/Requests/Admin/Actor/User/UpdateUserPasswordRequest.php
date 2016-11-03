@@ -6,7 +6,7 @@ use App\Http\Requests\Request;
 
 /**
  * Class UpdateUserPasswordRequest
- * @package App\Http\Requests\Backend\Actor\User
+ * @package App\Http\Requests\Admin\Actor\User
  */
 class UpdateUserPasswordRequest extends Request
 {

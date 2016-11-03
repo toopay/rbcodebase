@@ -1,4 +1,6 @@
-<?php namespace App\Models\Common\History;
+<?php
+
+namespace App\Models\Common\History;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Common\History\Traits\Relationship\HistoryRelationship;

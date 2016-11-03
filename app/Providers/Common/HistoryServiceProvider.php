@@ -3,9 +3,9 @@
 namespace App\Providers\Common;
 
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\Backend\History\HistoryContract;
-use App\Repositories\Backend\History\EloquentHistoryRepository;
-use App\Repositories\Backend\History\Facades\History as HistoryFacade;
+use App\Repositories\Admin\History\HistoryContract;
+use App\Repositories\Admin\History\EloquentHistoryRepository;
+use App\Repositories\Admin\History\Facades\History as HistoryFacade;
 
 /**
  * Class HistoryServiceProvider

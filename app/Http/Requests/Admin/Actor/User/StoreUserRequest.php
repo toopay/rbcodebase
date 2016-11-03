@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 
 /**
  * Class StoreUserRequest
- * @package App\Http\Requests\Backend\Actor\User
+ * @package App\Http\Requests\Admin\Actor\User
  */
 class StoreUserRequest extends Request
 {

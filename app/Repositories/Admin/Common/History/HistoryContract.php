@@ -1,8 +1,10 @@
-<?php namespace App\Repositories\Admin\Common\History;
+<?php
+
+namespace App\Repositories\Admin\Common\History;
 
 /**
  * Interface HistoryContract
- * @package App\Repositories\Backend\History
+ * @package App\Repositories\Admin\History
  */
 interface HistoryContract {
 

@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin\Actor\User;
 
 use App\Models\Actor\User\User;
 use App\Http\Controllers\Controller;
-use App\Repositories\Backend\Actor\User\UserRepository;
-use App\Http\Requests\Backend\Actor\User\ManageUserRequest;
-use App\Http\Requests\Backend\Actor\User\UpdateUserPasswordRequest;
+use App\Repositories\Admin\Actor\User\UserRepository;
+use App\Http\Requests\Admin\Actor\User\ManageUserRequest;
+use App\Http\Requests\Admin\Actor\User\UpdateUserPasswordRequest;
 
 /**
  * Class UserPasswordController

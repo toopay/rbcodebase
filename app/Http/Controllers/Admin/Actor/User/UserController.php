@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin\Actor\User;
 
 use App\Models\Actor\User\User;
 use App\Http\Controllers\Controller;
-use App\Repositories\Backend\Actor\User\UserRepository;
+use App\Repositories\Admin\Actor\User\UserRepository;
 use App\Repositories\Admin\Actor\User\RoleRepository;
-use App\Http\Requests\Backend\Actor\User\StoreUserRequest;
-use App\Http\Requests\Backend\Actor\User\ManageUserRequest;
-use App\Http\Requests\Backend\Actor\User\UpdateUserRequest;
+use App\Http\Requests\Admin\Actor\User\StoreUserRequest;
+use App\Http\Requests\Admin\Actor\User\ManageUserRequest;
+use App\Http\Requests\Admin\Actor\User\UpdateUserRequest;
 
 /**
  * Class UserController
