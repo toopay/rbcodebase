@@ -2,7 +2,7 @@
 
 namespace App\Providers\Common;
 
-use App\Helpers\Macros\Macros;
+use App\Helpers\Common\Macros\Macros;
 use Collective\Html\HtmlServiceProvider;
 
 /**

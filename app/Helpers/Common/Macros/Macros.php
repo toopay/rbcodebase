@@ -3,7 +3,7 @@
 namespace App\Helpers\Common\Macros;
 
 use Collective\Html\FormBuilder;
-use App\Helpers\Macros\Traits\Dropdowns;
+use App\Helpers\Common\Macros\Traits\Dropdowns;
 
 /**
  * Class Macros

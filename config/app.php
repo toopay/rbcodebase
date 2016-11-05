@@ -191,19 +191,19 @@ return [
 		/*
 		 * Has to override the Collective\Html\HtmlServiceProvider form singleton
 		 */
-		App\Providers\MacroServiceProvider::class,
+		App\Providers\Common\MacroServiceProvider::class,
 
 		/*
 		 * Application Service Providers...
 		 */
-		App\Providers\AccessServiceProvider::class,
+		App\Providers\Actor\User\AccessServiceProvider::class,
 		App\Providers\AppServiceProvider::class,
-		App\Providers\AuthServiceProvider::class,
+		App\Providers\Actor\User\AuthServiceProvider::class,
 		App\Providers\BladeServiceProvider::class,
 		//App\Providers\BroadcastServiceProvider::class,
 		App\Providers\ComposerServiceProvider::class,
 		App\Providers\EventServiceProvider::class,
-		App\Providers\HistoryServiceProvider::class,
+		App\Providers\Common\HistoryServiceProvider::class,
 		App\Providers\RouteServiceProvider::class,
 
 	],
