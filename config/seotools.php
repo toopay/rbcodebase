@@ -8,8 +8,8 @@ return [
 		 * The default configurations to be used by the meta generator.
 		 */
 		'defaults'       => [
-			'title'        => 'DIY:DIFM',
-			'description'  => 'Digital Marketing Tools & Training',
+			'title'        => config('app.name'),
+			'description'  => 'Laravel 5.3 Starter Codebased',
 			'separator'    => ' - ',
 			'keywords'     => [],
 			'canonical'    => null, // Set null for using Url::current()
@@ -31,8 +31,8 @@ return [
 		 * The default configurations to be used by the opengraph generator.
 		 */
 		'defaults' => [
-			'title'        => 'DIY:DIFM - Digital Marketing Tools & Training',
-			'description'  => 'Digital Marketing Tools & Training',
+			'title'        => config('app.name'),
+			'description'  => 'Laravel 5.3 Starter Codebase',
 			'url'         => null,
 			'type'        => false,
 			'site_name'   => false,

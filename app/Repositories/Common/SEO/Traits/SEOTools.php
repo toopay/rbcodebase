@@ -1,6 +1,6 @@
 <?php
 
-namespace Artesaos\SEOTools\Traits;
+namespace App\Repositories\Common\SEO\Traits;
 
 use App\Repositories\Common\SEO\Contracts\SEOFriendly;
 

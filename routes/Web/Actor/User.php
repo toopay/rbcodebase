@@ -25,17 +25,20 @@ Route::group(['namespace' => 'User'], function () {
 			// Management
 			Route::get('/', 'ProfileController@index')->name('actor.user.profile');
 			Route::get('edit', 'ProfileController@edit')->name('actor.user.profile.edit');
-			Route::patch('update', 'ProfileController@update')->name('actor.user.profile.update');
+			Route::patch('update', 'ProfileController@update')->name('profile.update'); // actor.user.profile.update
 			Route::patch('meta/update', 'ProfileController@updateMeta')->name('actor.user.profile.meta.update');
 
 			// Auth
-			Route::group(['middleware' => 'auth', 'namespace' => 'Auth'], function () {
+			Route::group(['namespace' => 'Auth'], function () {
 				// Logout
-				Route::get('logout', 'LoginController@logout')->name('actor.user.auth.logout');
+				Route::get('logout', 'LoginController@logout')->name('logout'); // actor.user.auth.logout
+
+				// For when admin is logged in as user from backend
+				Route::get('logout-as', 'LoginController@logoutAs')->name('logout-as');
 
 				// Change Password Routes
-				Route::get('password', 'PasswordController@showChangePasswordForm')->name('actor.user.profile.password.change');
-				Route::post('password', 'PasswordController@changePassword')->name('actor.user.profile.password.update');
+				Route::patch('password/change', 'ChangePasswordController@changePassword')->name('password.change'); // actor.user.profile.password.change
+
 			});
 
 			// Media
@@ -65,29 +68,31 @@ Route::group(['namespace' => 'User'], function () {
 	Route::group(['middleware' => 'guest', 'namespace' => 'Auth'], function () {
 
 		// Authentication Routes
-		Route::get('login', 'LoginController@showLoginForm')->name('actor.user.auth.login');
-		Route::post('login', 'LoginController@login');
+		Route::get('login', 'LoginController@showLoginForm')->name('login'); // actor.user.auth.login
+		Route::post('login', 'LoginController@login')->name('login');
 
 		// Socialite Routes
-		Route::get('login/{service}', 'SocialLoginController@redirect')->name('actor.user.auth.provider');
-		Route::get('login/{service}/callback', 'SocialLoginController@callback')->name('actor.user.auth.provider.callback');
+		Route::get('login/{provider}', 'SocialLoginController@login')->name('actor.user.auth.social.login');
+		// login/{service}/callback     actor.user.auth.social.callback
 
 		// Registration Routes
-		Route::get('register', 'LoginController@showRegistrationForm')->name('actor.user.auth.register');
-		Route::post('register', 'LoginController@register');
+		Route::get('register', 'RegisterController@showRegistrationForm')->name('actor.user.auth.register');
+		Route::post('register', 'RegisterController@register')->name('actor.user.auth.register');
 
 		// Profile
-//		Route::group(['prefix' => 'profile'], function() {
+		//	Route::group(['prefix' => 'profile'], function() {
 
-			// Confirm Account Routes
-	//		Route::get('account/confirm/{token}', 'LoginController@confirmAccount')->name('actor.user.auth.confirm');
-	//		Route::get('account/confirm/resend/{user_id}', 'LoginController@resendConfirmationEmail')->name('actor.user.auth.confirm.resend');
+		// Confirm Account Routes
+		Route::get('account/confirm/{token}', 'ConfirmAccountController@confirm')->name('actor.user.auth.confirm');
+		Route::get('account/confirm/resend/{user}', 'ConfirmAccountController@sendConfirmationEmail')->name('actor.user.auth.confirm.resend');
 
-			// Password Reset Routes
-	//		Route::get('password/reset/{token?}', 'PasswordController@showResetForm')->name('actor.user.auth.password.reset');
-	//		Route::post('password/email', 'PasswordController@sendResetLinkEmail');
-	//		Route::post('password/reset', 'PasswordController@reset');
+		// Password Reset Routes
+		Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('actor.user.auth.password.email');
+		Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('actor.user.auth.password.email');
+
+		Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('actor.user.auth.password.reset.form');
+		Route::post('password/reset', 'ResetPasswordController@reset')->name('actor.user.auth.password.reset');
+		//	});
 	});
 
-//	});
 });
