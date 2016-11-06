@@ -204,6 +204,7 @@ return [
 		App\Providers\ComposerServiceProvider::class,
 		App\Providers\EventServiceProvider::class,
 		App\Providers\Common\HistoryServiceProvider::class,
+		App\Providers\Common\SEOToolsServiceProvider::class,
 		App\Providers\RouteServiceProvider::class,
 
 	],
