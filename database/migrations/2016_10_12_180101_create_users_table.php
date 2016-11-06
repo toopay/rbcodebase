@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
 			$table->string('name_slug')->unique();
 			$table->string('email')->unique();
 			$table->string('password')->nullable();
-			$table->string('confirmation_code');
+			$table->string('confirmation_code')->nullable();
 			$table->boolean('confirmed')->default(config('actor.users.confirm_email') ? false : true);
 			$table->string('language')->nullable();
 			$table->string('timezone')->default('UTC');

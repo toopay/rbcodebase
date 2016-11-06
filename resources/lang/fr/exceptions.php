@@ -51,7 +51,7 @@ return [
                 'created_confirm' => 'Votre compte a été créé avec succès.  Un email de confirmation vous a été envoyé.',
                 'mismatch' => 'Votre code de confirmation est invalide.',
                 'not_found' => "Votre code de confirmation n'existe pas.",
-                'resend' => 'Votre compte n\'est pas confirmé. Veuillez utiliser le lien qui vous a été envoyé par email, ou <a href="' . route('actor.user.auth.account.confirm.resend', ':user_id') . '">cliquez ici </a> pour recevoir un email de nouveau.',
+                'resend' => 'Votre compte n\'est pas confirmé. Veuillez utiliser le lien qui vous a été envoyé par email, ou <a href="' . route('actor.user.auth.confirm.resend', ':user_id') . '">cliquez ici </a> pour recevoir un email de nouveau.',
                 'success' => "Votre compte est dorénavant confirmé !",
                 'resent' => "Un nouvel email a été envoyé à l'adresse enregistrée.",
             ],

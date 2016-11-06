@@ -177,10 +177,10 @@ return [
 		/*
 		 * Package Service Providers...
 		 */
+		Arcanedev\LogViewer\LogViewerServiceProvider::class,
 		Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
 		Creativeorange\Gravatar\GravatarServiceProvider::class,
-		DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
 		HieuLe\Active\ActiveServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
 		Yajra\Datatables\DatatablesServiceProvider::class,
